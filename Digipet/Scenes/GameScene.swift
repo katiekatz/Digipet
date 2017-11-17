@@ -19,7 +19,9 @@ class Homepage: SKScene {
     let settingsPage = SKScene(fileNamed: "SettingsPage")
     
     func goToScene(scene: SKScene) {
-        let sceneTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
+        //let sceneTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
+        //let sceneTransition = SKTransition.moveIn(with: .right, duration: 0.5)
+        let sceneTransition = SKTransition.push(with: .left, duration: 0.5)
         scene.scaleMode = .aspectFill
         self.view?.presentScene(scene, transition: sceneTransition)
     }
@@ -40,9 +42,10 @@ class Homepage: SKScene {
             let scene:SKScene = playPage!
             self.view?.presentScene(scene, transition: transition)
         } else if learnButton.contains(touchLocation) {
-            let transition:SKTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
+            //let transition:SKTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
             let scene:SKScene = learnPage!
-            self.view?.presentScene(scene, transition: transition)
+            //self.view?.presentScene(scene, transition: transition)
+            goToScene(scene: scene)
         } else if settingsButton.contains(touchLocation) {
             let transition:SKTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
             let scene:SKScene = settingsPage!

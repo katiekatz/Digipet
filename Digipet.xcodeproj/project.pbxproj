@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0222C1DE1FB09B7600CA8D29 /* LearnPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222C1DD1FB09B7600CA8D29 /* LearnPage.swift */; };
+		022804EE1FBF19650087F8B3 /* LevelOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 022804ED1FBF19650087F8B3 /* LevelOne.sks */; };
+		022804F01FBF19950087F8B3 /* LevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022804EF1FBF19950087F8B3 /* LevelOne.swift */; };
 		022C69061F82650E0034833D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C69051F82650E0034833D /* AppDelegate.swift */; };
 		022C69081F82650E0034833D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 022C69071F82650E0034833D /* GameScene.sks */; };
 		022C690A1F82650E0034833D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 022C69091F82650E0034833D /* Actions.sks */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		0222C1DD1FB09B7600CA8D29 /* LearnPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnPage.swift; sourceTree = "<group>"; };
+		022804ED1FBF19650087F8B3 /* LevelOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelOne.sks; sourceTree = "<group>"; };
+		022804EF1FBF19950087F8B3 /* LevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOne.swift; sourceTree = "<group>"; };
 		022C69021F82650E0034833D /* Digipet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digipet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		022C69051F82650E0034833D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		022C69071F82650E0034833D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				02E8052C1F9F69D4003D1C73 /* LearnPage.sks */,
 				0222C1DD1FB09B7600CA8D29 /* LearnPage.swift */,
 				02E8052E1F9F69E9003D1C73 /* SettingsPage.sks */,
+				022804ED1FBF19650087F8B3 /* LevelOne.sks */,
+				022804EF1FBF19950087F8B3 /* LevelOne.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 				02E8052B1F9F6996003D1C73 /* PlayPage.sks in Resources */,
 				022C69081F82650E0034833D /* GameScene.sks in Resources */,
 				02E8052D1F9F69D4003D1C73 /* LearnPage.sks in Resources */,
+				022804EE1FBF19650087F8B3 /* LevelOne.sks in Resources */,
 				022C69131F82650E0034833D /* Assets.xcassets in Resources */,
 				022C69161F82650E0034833D /* LaunchScreen.storyboard in Resources */,
 				0272AD991FAB49A700706CDE /* Plumpfull.ttf in Resources */,
@@ -297,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022804F01FBF19950087F8B3 /* LevelOne.swift in Sources */,
 				022C690E1F82650E0034833D /* GameViewController.swift in Sources */,
 				0222C1DE1FB09B7600CA8D29 /* LearnPage.swift in Sources */,
 				022C69061F82650E0034833D /* AppDelegate.swift in Sources */,
