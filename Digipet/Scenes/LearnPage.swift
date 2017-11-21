@@ -13,12 +13,14 @@ import UIKit
 class LearnPage: SKScene {
     
     var backArrow: SKSpriteNode!
-//    let gameScene = SKScene(fileNamed: "GameScene")
+    var menuIcon: SKSpriteNode!
     
     override func didMove(to view: SKView) {
 
-        //back arrow
         backArrow = childNode(withName: "//backArrow") as! SKSpriteNode
+        menuIcon = childNode(withName: "//menuIcon") as! SKSpriteNode
+        backArrow.position = CGPoint(x: 92, y: 1267)
+        menuIcon.position = CGPoint(x: 658, y: 1267)
 
     }
     
