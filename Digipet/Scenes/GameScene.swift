@@ -14,7 +14,8 @@ class Homepage: SKScene {
     var playButton: SKSpriteNode!
     var learnButton: SKSpriteNode!
     var settingsButton: SKSpriteNode!
-    let playPage = SKScene(fileNamed: "PlayPage")
+    //let playPage = SKScene(fileNamed: "PlayPage")
+    let l1Page = SKScene(fileNamed: "L1LessonOne")
     let learnPage = SKScene(fileNamed: "LearnPage")
     let settingsPage = SKScene(fileNamed: "SettingsPage")
     
@@ -38,18 +39,15 @@ class Homepage: SKScene {
         let touchLocation = touch.location(in: self)
         
         if playButton.contains(touchLocation) {
-            let transition:SKTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
-            let scene:SKScene = playPage!
-            self.view?.presentScene(scene, transition: transition)
+            let scene:SKScene = l1Page!
+            //let scene:SKScene = playPage!
+            goToScene(scene: scene)
         } else if learnButton.contains(touchLocation) {
-            //let transition:SKTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
             let scene:SKScene = learnPage!
-            //self.view?.presentScene(scene, transition: transition)
             goToScene(scene: scene)
         } else if settingsButton.contains(touchLocation) {
-            let transition:SKTransition = SKTransition.fade(with: UIColor.darkGray, duration: 1)
             let scene:SKScene = settingsPage!
-            self.view?.presentScene(scene, transition: transition)
+            goToScene(scene: scene)
         }
 
     }
