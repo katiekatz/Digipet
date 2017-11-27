@@ -16,7 +16,7 @@ class LevelOne: SKScene {
     var menuIcon: SKSpriteNode!
     
     override func didMove(to view: SKView) {
-        
+        print("Level One: Scene Loaded")
         backArrow = childNode(withName: "//backArrow") as! SKSpriteNode
         menuIcon = childNode(withName: "//menuIcon") as! SKSpriteNode
         backArrow.position = CGPoint(x: 92, y: 1267)
@@ -24,8 +24,8 @@ class LevelOne: SKScene {
         
     }
     
-    func goToScene(scene: SKScene) {
-        let sceneTransition = SKTransition.push(with: .right, duration: 0.5)
+    func pushToScene(scene: SKScene, direction: SKTransitionDirection) {
+        let sceneTransition = SKTransition.push(with: direction, duration: 0.5)
         scene.scaleMode = .aspectFill
         self.view?.presentScene(scene, transition: sceneTransition)
     }
@@ -36,9 +36,11 @@ class LevelOne: SKScene {
         let touchLocation = touch.location(in: self)
         
         if backArrow.contains(touchLocation) {
-            let scene:SKScene = SKScene(fileNamed: "GameScene")!
-            goToScene(scene: scene)
+            let scene:SKScene = SKScene(fileNamed: "LearnPage")!
+            print("Level One: Back Button Touch")
+            pushToScene(scene: scene, direction: .right)
         }
+    
         
     }
     
