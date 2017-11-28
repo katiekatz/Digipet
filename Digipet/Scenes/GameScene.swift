@@ -32,6 +32,7 @@ class Homepage: SKScene {
         learnButton = childNode(withName: "//learnButton") as! SKSpriteNode
         settingsButton = childNode(withName: "//settingsButton") as! SKSpriteNode
     }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
@@ -49,7 +50,5 @@ class Homepage: SKScene {
             let scene:SKScene = settingsPage!
             goToScene(scene: scene)
         }
-
     }
-    
 }
