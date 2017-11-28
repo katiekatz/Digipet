@@ -14,6 +14,7 @@ class Homepage: SKScene {
     var playButton: SKSpriteNode!
     var learnButton: SKSpriteNode!
     var settingsButton: SKSpriteNode!
+    var clouds: SKSpriteNode!
     let playPage = SKScene(fileNamed: "PlayPage")
     let learnPage = SKScene(fileNamed: "LearnPage")
     let settingsPage = SKScene(fileNamed: "SettingsPage")
@@ -31,6 +32,7 @@ class Homepage: SKScene {
         learnButton = childNode(withName: "//learnButton") as! SKSpriteNode
         settingsButton = childNode(withName: "//settingsButton") as! SKSpriteNode
     }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
@@ -51,7 +53,5 @@ class Homepage: SKScene {
             let scene:SKScene = settingsPage!
             self.view?.presentScene(scene, transition: transition)
         }
-
     }
-    
 }
