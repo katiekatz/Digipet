@@ -13,17 +13,29 @@ import UIKit
 class LearnPage: SKScene {
     
     var backArrow: SKSpriteNode!
-//    let gameScene = SKScene(fileNamed: "GameScene")
+    var menuIcon: SKSpriteNode!
+    var oneTouch: SKSpriteNode!
+    var twoTouch: SKSpriteNode!
+    var threeTouch: SKSpriteNode!
+    var fourTouch: SKSpriteNode!
+    var fiveTouch: SKSpriteNode!
+    var sixTouch: SKSpriteNode!
     
     override func didMove(to view: SKView) {
-
-        //back arrow
         backArrow = childNode(withName: "//backArrow") as! SKSpriteNode
-
+        menuIcon = childNode(withName: "//menuIcon") as! SKSpriteNode
+        oneTouch = childNode(withName: "//oneTouch") as! SKSpriteNode
+        twoTouch = childNode(withName: "//twoTouch") as! SKSpriteNode
+        threeTouch = childNode(withName: "//threeTouch") as! SKSpriteNode
+        fourTouch = childNode(withName: "//fourTouch") as! SKSpriteNode
+        fiveTouch = childNode(withName: "//fiveTouch") as! SKSpriteNode
+        sixTouch = childNode(withName: "//sixTouch") as! SKSpriteNode
+        backArrow.position = CGPoint(x: 92, y: 1267)
+        menuIcon.position = CGPoint(x: 658, y: 1267)
     }
     
-    func goToScene(scene: SKScene) {
-        let sceneTransition = SKTransition.push(with: .right, duration: 0.5)
+    func pushToScene(scene: SKScene, direction: SKTransitionDirection) {
+        let sceneTransition = SKTransition.push(with: direction, duration: 0.5)
         scene.scaleMode = .aspectFill
         self.view?.presentScene(scene, transition: sceneTransition)
     }
@@ -35,7 +47,12 @@ class LearnPage: SKScene {
         
         if backArrow.contains(touchLocation) {
             let scene:SKScene = SKScene(fileNamed: "GameScene")!
-            goToScene(scene: scene)
+            pushToScene(scene: scene, direction: .right)
+        }
+        
+        if oneTouch.contains(touchLocation) {
+            let scene:SKScene = SKScene(fileNamed: "LevelOne")!
+            pushToScene(scene: scene, direction: .left)
         }
         
     }
