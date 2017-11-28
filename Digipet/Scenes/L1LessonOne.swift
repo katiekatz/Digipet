@@ -38,9 +38,15 @@ class L1LessonOne: SKScene {
         let action = SKAction(named: "WalkIn")
         Pet.run(action!)
         
-        sleep(1)
-        talkButton.isHidden = true
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: false) {
+            timer in
+            self.talkButton.isHidden = false
+        }
         
+    }
+    
+    func showButton() {
+        talkButton.isHidden = false
     }
 }
 
