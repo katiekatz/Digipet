@@ -18,11 +18,19 @@ class L1LessonOne: SKScene {
     var sBubble: SKSpriteNode!
     var petText: SKLabelNode!
     let group = DispatchGroup()
+    var array: [() -> ()] = []
+    var counter: Int = 0
     
     func goToScene(scene: SKScene) {
         let sceneTransition = SKTransition.push(with: .left, duration: 0.5)
         scene.scaleMode = .aspectFill
         self.view?.presentScene(scene, transition: sceneTransition)
+    }
+    
+    func input() -> String {
+        let keyboard = FileHandle.standardInput
+        let inputData = keyboard.availableData
+        return (NSString(data: inputData, encoding: String.Encoding.utf8.rawValue)! as String)
     }
     
     override func didMove(to view: SKView) {
@@ -31,6 +39,12 @@ class L1LessonOne: SKScene {
         Pet1.zPosition = 1.0
         Pet1.position = CGPoint(x: self.frame.size.width, y: self.frame.size.height * -0.388)
         addChild(Pet1)
+        
+        Pet2 = SKSpriteNode(imageNamed: "china")
+        Pet2.size = CGSize(width: 375, height: 518)
+        Pet2.zPosition = 1.0
+        Pet2.position = CGPoint(x: self.frame.size.width, y: self.frame.size.height * -0.388)
+        addChild(Pet2)
         
         talkButton = childNode(withName: "//talkButton") as! SKSpriteNode
         talkButton.isHidden = true
@@ -41,17 +55,20 @@ class L1LessonOne: SKScene {
         petText = childNode(withName: "//petText") as! SKLabelNode
         petText.isHidden = true
         
-        self.group.enter()
-        entranceAnimation()
-        self.group.enter()
-        firstQuestion()
-        secondPet()
+        array = [firstQuestion, secondPet, sunrise]
+        
+        runLesson()
     }
     
-    func input() -> String {
-        let keyboard = FileHandle.standardInput
-        let inputData = keyboard.availableData
-        return (NSString(data: inputData, encoding: String.Encoding.utf8.rawValue)! as String)
+    func runLesson() {
+//        self.group.enter()
+          entranceAnimation()
+//
+//        self.group.enter()
+//        firstQuestion()
+//
+//        self.group.enter()
+//        secondPet()
     }
     
     func entranceAnimation() {
@@ -69,9 +86,8 @@ class L1LessonOne: SKScene {
                 timer in
                 
                 self.talkButton.isHidden = false
-                self.firstQuestion()
                 
-                self.group.leave()
+//                self.group.leave()
             }
         }
         
@@ -82,30 +98,39 @@ class L1LessonOne: SKScene {
 //        }
 //
 //        self.talkButton.isHidden = false
-        
     }
     
     func firstQuestion() {
+        self.petText.text = "How are you?"
+        
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
             timer in
-            self.petText.text = "How are you?"
+            self.petText.text = "Welcome!"
             
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
-                timer in
-                self.petText.text = "Welcome!"
-                
-                self.group.leave()
-            }
+//                self.group.leave()
         }
+        
         
     }
     
     func secondPet() {
-        Pet2 = SKSpriteNode(imageNamed: "china")
-        Pet2.size = CGSize(width: 375  * (2/3), height: 518 * (2/3))
-        Pet2.zPosition = 1.0
-        Pet2.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height * -0.388)
-        addChild(Pet2)
+        self.petText.text = "Pet!"
+        Pet2.run(SKAction(named: "WalkIn")!)
+        Pet1.run(SKAction(named: "Slide")!)
+        
+//        self.group.leave()
+    }
+    
+    func sunrise() {
+        let dayBackground = SKSpriteNode(imageNamed: "daybackground")
+        dayBackground.zPosition = -1.0
+        dayBackground.position = CGPoint(x: 0, y: 0)
+        addChild(dayBackground)
+        
+        let dayWall = SKSpriteNode(imageNamed: "wallday")
+        dayWall.zPosition = 0
+        dayWall.position = CGPoint(x: 0, y: 0)
+        addChild(dayWall)
     }
     
 //    @IBAction func doSomething(sender: SKSpriteNode!) {
@@ -119,18 +144,18 @@ class L1LessonOne: SKScene {
 //        }
 //    }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let touch = touches.first else { return }
-//
-//        let touchLocation = touch.location(in: self)
-//
-//        if talkButton.contains(touchLocation) {
-//            self.petText.text = "Welcome!"
-//        }
-//    }
-    
-    func showButton() {
-        talkButton.isHidden = false
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+
+        let touchLocation = touch.location(in: self)
+
+        if talkButton.contains(touchLocation) {
+            if counter < array.count {
+                self.array[counter]()
+                counter += 1
+            }
+        }
     }
+    
 }
 
