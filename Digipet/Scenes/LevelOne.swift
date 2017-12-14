@@ -74,6 +74,14 @@ class LevelOne: SKScene {
         row1Page1.position = CGPoint(x: 0, y: 0)
         page1ScrollView.addChild(row1Page1)
         
+        let row2Page1 = SKSpriteNode(color: .purple, size: CGSize(width: page1ScrollView.size.width, height: page1ScrollView.size.height / 4))
+        row2Page1.position = CGPoint(x: 0, y: page1ScrollView.size.height / 4)
+        page1ScrollView.addChild(row2Page1)
+        
+        let row3Page1 = SKSpriteNode(color: .magenta, size: CGSize(width: page1ScrollView.size.width, height: page1ScrollView.size.height / 4))
+        row3Page1.position = CGPoint(x: 0, y: page1ScrollView.size.height / 2)
+        page1ScrollView.addChild(row3Page1)
+        
         /// Test sprites page 2
         let sprite1Page2 = SKSpriteNode(color: .yellow, size: CGSize(width: 50, height: 50))
         sprite1Page2.position = CGPoint(x: 0, y: 0)
