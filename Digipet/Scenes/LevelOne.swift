@@ -35,8 +35,8 @@ class LevelOne: SKScene {
         
         //scroll stuff
         addChild(moveableNode)
-        let scrollHeight : CGFloat = UIScreen.main.bounds.height - 200
-        scrollView = SwiftySKScrollView(frame: CGRect(x: 0, y: 0, width: size.width, height: scrollHeight), moveableNode: moveableNode, direction: .vertical)
+        scrollView = SwiftySKScrollView(frame: CGRect(x: 0, y: 0, width: size.width, height: 1334), moveableNode: moveableNode, direction: .vertical)
+        
         scrollView?.contentSize = CGSize(width: scrollView!.frame.width, height: scrollView!.frame.height * 3) // makes it 3 times the height
     
 
@@ -70,17 +70,25 @@ class LevelOne: SKScene {
         sprite1Page1.addChild(sprite2Page1)
         
         //REAL STUFF ON PAGE 1
-        let row1Page1 = SKSpriteNode(color: .blue, size: CGSize(width: page1ScrollView.size.width, height: page1ScrollView.size.height / 4))
-        row1Page1.position = CGPoint(x: 0, y: 0)
+        let row1Page1 = SKSpriteNode(color: .blue, size: CGSize(width: page1ScrollView.size.width, height: 246))
+        row1Page1.anchorPoint.y = 0;
+        row1Page1.position = CGPoint(x: 0, y: -667)
         page1ScrollView.addChild(row1Page1)
         
-        let row2Page1 = SKSpriteNode(color: .purple, size: CGSize(width: page1ScrollView.size.width, height: page1ScrollView.size.height / 4))
-        row2Page1.position = CGPoint(x: 0, y: page1ScrollView.size.height / 4)
+        let row2Page1 = SKSpriteNode(color: .purple, size: CGSize(width: page1ScrollView.size.width, height: 246))
+        row2Page1.anchorPoint.y = 0;
+        row2Page1.position = CGPoint(x: 0, y: -421)
         page1ScrollView.addChild(row2Page1)
         
-        let row3Page1 = SKSpriteNode(color: .magenta, size: CGSize(width: page1ScrollView.size.width, height: page1ScrollView.size.height / 4))
-        row3Page1.position = CGPoint(x: 0, y: page1ScrollView.size.height / 2)
+        let row3Page1 = SKSpriteNode(color: .magenta, size: CGSize(width: page1ScrollView.size.width, height: 246))
+        row3Page1.anchorPoint.y = 0;
+        row3Page1.position = CGPoint(x: 0, y: -175)
         page1ScrollView.addChild(row3Page1)
+        
+        let row4Page1 = SKSpriteNode(color: .blue, size: CGSize(width: page1ScrollView.size.width, height: 246))
+        row4Page1.anchorPoint.y = 0;
+        row4Page1.position = CGPoint(x: 0, y: 71)
+        page1ScrollView.addChild(row4Page1)
         
         /// Test sprites page 2
         let sprite1Page2 = SKSpriteNode(color: .yellow, size: CGSize(width: 50, height: 50))
