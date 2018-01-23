@@ -22,13 +22,17 @@ class LevelOne: SKScene {
     var lessonsText: SKLabelNode!
     var levelText: SKLabelNode!
     var oneText: SKLabelNode!
+    var startCover : SKShapeNode!
+    var l1start : SKShapeNode!
+    
+    var row4Page1 : LessonRow!
 
     
     override func didMove(to view: SKView) {
         //background box for scrolling
         let whiteBox = SKSpriteNode(color: .white, size: CGSize(width: 750, height: 350))
         whiteBox.position = CGPoint(x: 375, y: 1169)
-        whiteBox.zPosition = 0;
+        whiteBox.zPosition = 10;
         addChild(whiteBox);
         
         
@@ -37,7 +41,7 @@ class LevelOne: SKScene {
         addChild(moveableNode)
         scrollView = SwiftySKScrollView(frame: CGRect(x: 0, y: 0, width: size.width, height: 1334), moveableNode: moveableNode, direction: .vertical)
         
-        scrollView?.contentSize = CGSize(width: scrollView!.frame.width, height: scrollView!.frame.height * 3) // makes it 3 times the height
+        scrollView?.contentSize = CGSize(width: scrollView!.frame.width, height: scrollView!.frame.height + 2*984)
     
 
         //this was supposed to be view? but that threw an error so we're trying this
@@ -47,66 +51,72 @@ class LevelOne: SKScene {
         
         let page1ScrollView = SKSpriteNode(color: .clear, size: CGSize(width: scrollView.frame.width, height: scrollView.frame.size.height))
         page1ScrollView.position = CGPoint(x: frame.midX, y: frame.midY)
-        page1ScrollView.zPosition = -1;
+        page1ScrollView.zPosition = -1
         moveableNode.addChild(page1ScrollView)
         
-        let page2ScrollView = SKSpriteNode(color: .clear, size: CGSize(width: scrollView.frame.width, height: scrollView.frame.size.height))
-        page2ScrollView.position = CGPoint(x: frame.midX, y: frame.midY - scrollView.frame.height)
-        page2ScrollView.zPosition = -1;
+        let page2ScrollView = SKSpriteNode(color: .clear, size: CGSize(width: scrollView.frame.width, height: 984))
+        page2ScrollView.position = CGPoint(x: frame.midX, y: frame.midY - 1159)
+        page2ScrollView.zPosition = -1
         moveableNode.addChild(page2ScrollView)
         
-        let page3ScrollView = SKSpriteNode(color: .clear, size: CGSize(width: scrollView.frame.width, height: scrollView.frame.size.height))
-        page3ScrollView.position = CGPoint(x: frame.midX, y: frame.midY - (scrollView.frame.height * 2))
-        page3ScrollView.zPosition = -1;
+        let page3ScrollView = SKSpriteNode(color: .clear, size: CGSize(width: scrollView.frame.width, height: 984))
+        page3ScrollView.position = CGPoint(x: frame.midX, y: frame.midY - (984 + 1159))
+        page3ScrollView.zPosition = -1
         moveableNode.addChild(page3ScrollView)
         
-        //test nodes for scroll
-        let sprite1Page1 = SKSpriteNode(color: .red, size: CGSize(width: 50, height: 50))
-        sprite1Page1.position = CGPoint(x: 0, y: 0)
-        page1ScrollView.addChild(sprite1Page1)
-        
-        let sprite2Page1 = SKSpriteNode(color: .orange, size: CGSize(width: 50, height: 50))
-        sprite2Page1.position = CGPoint(x: sprite1Page1.position.x, y: sprite1Page1.position.y - sprite2Page1.size.height * 1.5)
-        sprite1Page1.addChild(sprite2Page1)
         
         //REAL STUFF ON PAGE 1
-        let row1Page1 = SKSpriteNode(color: .blue, size: CGSize(width: page1ScrollView.size.width, height: 246))
-        row1Page1.anchorPoint.y = 0;
-        row1Page1.position = CGPoint(x: 0, y: -667)
+        let row1Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -667, petName: "china", lN: "Lesson 4")
         page1ScrollView.addChild(row1Page1)
         
-        let row2Page1 = SKSpriteNode(color: .purple, size: CGSize(width: page1ScrollView.size.width, height: 246))
-        row2Page1.anchorPoint.y = 0;
-        row2Page1.position = CGPoint(x: 0, y: -421)
+
+        let row2Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -421, petName: "china", lN: "Lesson 3")
         page1ScrollView.addChild(row2Page1)
         
-        let row3Page1 = SKSpriteNode(color: .magenta, size: CGSize(width: page1ScrollView.size.width, height: 246))
-        row3Page1.anchorPoint.y = 0;
-        row3Page1.position = CGPoint(x: 0, y: -175)
+        let row3Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -175, petName: "china", lN: "Lesson 2")
         page1ScrollView.addChild(row3Page1)
         
-        let row4Page1 = SKSpriteNode(color: .blue, size: CGSize(width: page1ScrollView.size.width, height: 246))
-        row4Page1.anchorPoint.y = 0;
-        row4Page1.position = CGPoint(x: 0, y: 71)
+        row4Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 71, petName: "china", lN: "Lesson 1")
+        startCover = SKShapeNode(rect: CGRect(x: -145, y: 55, width: 200, height: 50), cornerRadius: 25)
+        startCover.fillColor = .yellow
+        startCover.zPosition = 2
+        startCover.isUserInteractionEnabled = true
+        print(startCover.isUserInteractionEnabled)
+        l1start = row4Page1.startCover
+        row4Page1.addChild(startCover)
         page1ScrollView.addChild(row4Page1)
         
-        /// Test sprites page 2
-        let sprite1Page2 = SKSpriteNode(color: .yellow, size: CGSize(width: 50, height: 50))
-        sprite1Page2.position = CGPoint(x: 0, y: 0)
-        page2ScrollView.addChild(sprite1Page2)
         
-        let sprite2Page2 = SKSpriteNode(color: .green, size: CGSize(width: 50, height: 50))
-        sprite2Page2.position = CGPoint(x: sprite1Page2.position.x, y: sprite1Page2.position.y - (sprite2Page2.size.height * 1.5))
-        sprite1Page2.addChild(sprite2Page2)
+        //REAL STUFF ON PAGE 2
+        let row1Page2 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -492, petName: "china", lN: "Lesson 8")
+        page2ScrollView.addChild(row1Page2)
         
-        /// Test sprites page 3
-        let sprite1Page3 = SKSpriteNode(color: .blue, size: CGSize(width: 50, height: 50))
-        sprite1Page3.position = CGPoint(x: 0, y: 0)
-        page3ScrollView.addChild(sprite1Page3)
+        let row2Page2 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -246, petName: "china", lN: "Lesson 7")
+        page2ScrollView.addChild(row2Page2)
         
-        let sprite2Page3 = SKSpriteNode(color: .purple, size: CGSize(width: 50, height: 50))
-        sprite2Page3.position = CGPoint(x: sprite1Page3.position.x, y: sprite1Page3.position.y - (sprite2Page3.size.height * 1.5))
-        sprite1Page3.addChild(sprite2Page3)
+        let row3Page2 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 0, petName: "china", lN: "Lesson 6")
+        page2ScrollView.addChild(row3Page2)
+        
+        let row4Page2 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 246, petName: "china", lN: "Lesson 5")
+        page2ScrollView.addChild(row4Page2)
+        
+
+        
+        //REAL STUFF ON PAGE 3
+        let row1Page3 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -492, petName: "china", lN: "Lesson 12")
+        page3ScrollView.addChild(row1Page3)
+        
+        let row2Page3 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -246, petName: "china", lN: "Lesson 11")
+        page3ScrollView.addChild(row2Page3)
+        
+        let row3Page3 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 0, petName: "china", lN: "Lesson 10")
+        page3ScrollView.addChild(row3Page3)
+        
+        let row4Page3 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 246, petName: "china", lN: "Lesson 9")
+        page3ScrollView.addChild(row4Page3)
+        
+        
+        
         //end scroll stuff
         
         
@@ -116,15 +126,15 @@ class LevelOne: SKScene {
         levelText = childNode(withName: "//levelText") as! SKLabelNode
         oneText = childNode(withName: "//oneText") as! SKLabelNode
         backArrow.position = CGPoint(x: 92, y: 1267)
-        backArrow.zPosition = 1;
+        backArrow.zPosition = 11;
         menuIcon.position = CGPoint(x: 658, y: 1267)
-        menuIcon.zPosition = 1;
+        menuIcon.zPosition = 11;
         lessonsText.position = CGPoint(x: 375, y: 1034)
-        lessonsText.zPosition = 1;
+        lessonsText.zPosition = 11;
         levelText.position = CGPoint(x: 350, y: 1134)
-        levelText.zPosition = 1;
+        levelText.zPosition = 11;
         oneText.position = CGPoint(x: 525, y: 1134)
-        oneText.zPosition = 1;
+        oneText.zPosition = 11;
         
     }
     
@@ -142,6 +152,11 @@ class LevelOne: SKScene {
         if backArrow.contains(touchLocation) {
             let scene:SKScene = SKScene(fileNamed: "LearnPage")!
             pushToScene(scene: scene, direction: .right)
+        }
+        
+        if oneText.contains(touchLocation) {
+            let scene:SKScene = SKScene(fileNamed: "StartLevelOneLessonOne")!
+            pushToScene(scene: scene, direction: .left)
         }
     
         
