@@ -121,7 +121,6 @@
 		022C69041F82650E0034833D /* Digipet */ = {
 			isa = PBXGroup;
 			children = (
-				0272AD981FAB49A700706CDE /* Plumpfull.ttf */,
 				02E805291F9F6926003D1C73 /* Scenes */,
 				022C69051F82650E0034833D /* AppDelegate.swift */,
 				022C69091F82650E0034833D /* Actions.sks */,
@@ -155,6 +154,7 @@
 		02E805291F9F6926003D1C73 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0272AD981FAB49A700706CDE /* Plumpfull.ttf */,
 				022C69071F82650E0034833D /* GameScene.sks */,
 				7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */,
 				7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */,
