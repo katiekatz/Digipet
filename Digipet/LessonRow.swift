@@ -21,7 +21,8 @@ public class LessonRow: SKSpriteNode {
     var infoText : SKLabelNode!
     public var startCover : SKShapeNode!
     var infoCover : SKShapeNode!
-    //make transparent covers for buttons and getter methods for the covers
+
+    
     
     init(size: CGSize, y: CGFloat, petName: String, lN: String){
         
@@ -50,7 +51,6 @@ public class LessonRow: SKSpriteNode {
         startButton.strokeColor = UIColor(red: 108/255.0, green: 1, blue: 111/255.0, alpha: 1)
         startButton.lineWidth = 4.0
         startButton.glowWidth = 0
-        startButton.name = "start!"
         
         startText = SKLabelNode(text: "start")
         startText.position = CGPoint(x: -45, y: 65)
@@ -78,17 +78,6 @@ public class LessonRow: SKSpriteNode {
         
         self.addChild(infoButton)
         self.addChild(infoText)
-        
-//        startCover = SKShapeNode(rect: CGRect(x: -145, y: 55, width: 200, height: 50), cornerRadius: 25)
-//        startCover.fillColor = .yellow
-//        startCover.zPosition = 2
-//        self.addChild(startCover)
-        
-    }
-    
-    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        
         
     }
     

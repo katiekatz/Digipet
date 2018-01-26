@@ -14,7 +14,7 @@ class StartLevelOneLessonOne: SKScene {
     
     var backArrow: SKSpriteNode!
     var menuIcon: SKSpriteNode!
-    var box: SKShapeNode!
+    var box: LessonStartBox!
     var petImg: SKSpriteNode!
 
     
@@ -45,9 +45,16 @@ class StartLevelOneLessonOne: SKScene {
         
         let touchLocation = touch.location(in: self)
         
+        let nodes = self.nodes(at: touchLocation)
+        
         if backArrow.contains(touchLocation) {
             let scene:SKScene = SKScene(fileNamed: "LevelOne")!
             pushToScene(scene: scene, direction: .right)
+        }
+        
+        if nodes.contains(box.typeButton) {
+            let scene:SKScene = SKScene(fileNamed: "L1LessonOne")!
+            pushToScene(scene: scene, direction: .left)
         }
         
 

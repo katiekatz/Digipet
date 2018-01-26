@@ -77,13 +77,6 @@ class LevelOne: SKScene {
         page1ScrollView.addChild(row3Page1)
         
         row4Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 71, petName: "china", lN: "Lesson 1")
-        startCover = SKShapeNode(rect: CGRect(x: -145, y: 55, width: 200, height: 50), cornerRadius: 25)
-        startCover.fillColor = .yellow
-        startCover.zPosition = 2
-        startCover.isUserInteractionEnabled = true
-        print(startCover.isUserInteractionEnabled)
-        l1start = row4Page1.startCover
-        row4Page1.addChild(startCover)
         page1ScrollView.addChild(row4Page1)
         
         
@@ -149,12 +142,14 @@ class LevelOne: SKScene {
         
         let touchLocation = touch.location(in: self)
         
+        let nodes = self.nodes(at: touchLocation)
+        
         if backArrow.contains(touchLocation) {
             let scene:SKScene = SKScene(fileNamed: "LearnPage")!
             pushToScene(scene: scene, direction: .right)
         }
         
-        if oneText.contains(touchLocation) {
+        if nodes.contains(row4Page1.startButton) {
             let scene:SKScene = SKScene(fileNamed: "StartLevelOneLessonOne")!
             pushToScene(scene: scene, direction: .left)
         }
