@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,84 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vpP-R5-f1r">
+                    <connections>
+                        <segue destination="ufl-Ln-rC7" kind="show" id="1ru-02-dLA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="124.58770614692655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YUy-Qw-Cbo">
+            <objects>
+                <viewController id="ufl-Ln-rC7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EaH-yt-An5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" sceneName="GameScene.sks" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-ia-qLo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Z8d-ih-8Ot" appends="YES" id="WfP-fY-Jce"/>
+                                </connections>
+                            </skView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WZg-ia-qLo" firstAttribute="bottom" secondItem="YVq-0x-7Xj" secondAttribute="bottom" id="Add-KG-Twl"/>
+                            <constraint firstItem="WZg-ia-qLo" firstAttribute="leading" secondItem="EaH-yt-An5" secondAttribute="leading" id="Kb1-Ns-GpT"/>
+                            <constraint firstItem="WZg-ia-qLo" firstAttribute="top" secondItem="EaH-yt-An5" secondAttribute="top" id="dg7-wY-3WA"/>
+                            <constraint firstAttribute="trailing" secondItem="WZg-ia-qLo" secondAttribute="trailing" id="w2o-BK-QDM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YVq-0x-7Xj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ke-8z-PmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fx4-TT-AJ6">
+                    <connections>
+                        <segue destination="8Au-bX-vME" kind="show" id="c4y-bf-G9h"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Z8d-ih-8Ot"/>
+            </objects>
+            <point key="canvasLocation" x="820" y="124.58770614692655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jod-ca-DGP">
+            <objects>
+                <viewController id="8Au-bX-vME" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Unx-vD-hRp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" sceneName="L1LessonOne.sks" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-ZC-cpk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3vR-X7-NKk" appends="YES" id="epf-TN-ZVq"/>
+                                </connections>
+                            </skView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xs5-ZC-cpk" firstAttribute="leading" secondItem="Unx-vD-hRp" secondAttribute="leading" id="Nih-Ug-Cvd"/>
+                            <constraint firstAttribute="trailing" secondItem="Xs5-ZC-cpk" secondAttribute="trailing" id="Q2I-Mc-FKa"/>
+                            <constraint firstItem="Xs5-ZC-cpk" firstAttribute="bottom" secondItem="Xed-Hv-4Yk" secondAttribute="bottom" id="dkf-IN-8GU"/>
+                            <constraint firstItem="Xs5-ZC-cpk" firstAttribute="top" secondItem="Unx-vD-hRp" secondAttribute="top" id="whD-dH-DOa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xed-Hv-4Yk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9C-LF-57x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3vR-X7-NKk">
+                    <connections>
+                        <segue destination="8Au-bX-vME" kind="custom" id="BNv-ta-7G0"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1578" y="125"/>
         </scene>
     </scenes>
 </document>
