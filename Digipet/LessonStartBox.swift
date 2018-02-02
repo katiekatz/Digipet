@@ -13,7 +13,6 @@ import UIKit
 public class LessonStartBox: SKShapeNode {
     
     var lessonName: SKLabelNode!
-    var backBox: SKShapeNode!
     var line1: SKLabelNode!
     var line2: SKLabelNode!
     var line3: SKLabelNode!

@@ -24,11 +24,25 @@ class LevelOne: SKScene {
     var oneText: SKLabelNode!
     var startCover : SKShapeNode!
     var l1start : SKShapeNode!
+    var box: LessonInfoBox!
+    var fuzzy: SKShapeNode!
     
+    var row1Page1 : LessonRow!
+    var row2Page1 : LessonRow!
+    var row3Page1 : LessonRow!
     var row4Page1 : LessonRow!
+
 
     
     override func didMove(to view: SKView) {
+        //fuzzyness
+        fuzzy = SKShapeNode(rect: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 750, height: 1334)))
+        fuzzy.fillColor = .white
+        fuzzy.alpha = 0
+        fuzzy.zPosition = 1000
+        //validate box
+        box = LessonInfoBox(lN: "placeholder", v1: "placeholder", v2: "placeholder", v3: "placeholder", d1: "placeholder", d2: "placeholder", d3: "placeholder", moveTo: "placeholder")
+        box.zPosition = 1001
         //background box for scrolling
         let whiteBox = SKSpriteNode(color: .white, size: CGSize(width: 750, height: 350))
         whiteBox.position = CGPoint(x: 375, y: 1169)
@@ -66,18 +80,19 @@ class LevelOne: SKScene {
         
         
         //REAL STUFF ON PAGE 1
-        let row1Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -667, petName: "china", lN: "Lesson 4")
+        row1Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 71, petName: "china", lN: "Greetings")
         page1ScrollView.addChild(row1Page1)
         
-
-        let row2Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -421, petName: "china", lN: "Lesson 3")
+        row2Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -175, petName: "china", lN: "Lesson 2")
         page1ScrollView.addChild(row2Page1)
         
-        let row3Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -175, petName: "china", lN: "Lesson 2")
+        row3Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -421, petName: "china", lN: "Lesson 3")
         page1ScrollView.addChild(row3Page1)
         
-        row4Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 71, petName: "china", lN: "Lesson 1")
+        row4Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -667, petName: "china", lN: "Lesson 4")
         page1ScrollView.addChild(row4Page1)
+    
+
         
         
         //REAL STUFF ON PAGE 2
@@ -137,6 +152,12 @@ class LevelOne: SKScene {
         self.view?.presentScene(scene, transition: sceneTransition)
     }
     
+    func fadeToScene(scene: SKScene) {
+        let sceneTransition = SKTransition.fade(with: .white, duration: 0.5)
+        scene.scaleMode = .aspectFill
+        self.view?.presentScene(scene, transition: sceneTransition)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         
@@ -149,9 +170,45 @@ class LevelOne: SKScene {
             pushToScene(scene: scene, direction: .right)
         }
         
-        if nodes.contains(row4Page1.startButton) {
+        if nodes.contains(row1Page1.startButton) {
             let scene:SKScene = SKScene(fileNamed: "StartLevelOneLessonOne")!
             pushToScene(scene: scene, direction: .left)
+        }
+        
+        if nodes.contains(row1Page1.infoButton) {
+            box = LessonInfoBox(lN: "Greetings", v1: "hola hola hola hola hola", v2: "你好 你好 你好", v3: "bonjour bonjour bonjour", d1: "greetings are for losers", d2: "mime your way through existence", d3: "until your inevitable demise.", moveTo: "L1LessonOne")
+            box.position = CGPoint(x: 75, y: 375)
+            box.alpha = 0
+            box.zPosition = 1001
+            self.addChild(box)
+            self.addChild(fuzzy)
+            let boxAction = SKAction.fadeIn(withDuration: 0.25)
+            let fuzzyAction = SKAction.fadeAlpha(to: 0.75, duration: 0.25)
+            box.run(boxAction)
+            fuzzy.run(fuzzyAction)
+        }
+        
+        if nodes.contains(row2Page1.infoButton) {
+            box = LessonInfoBox(lN: "Lesson 2", v1: "this is vocab", v2: "okay sure that's not what i meant", v3: "giggling", d1: "well i feel like anything i say", d2: "is just going to be typed!", d3: "*quietly* great this is great", moveTo: "GameScene")
+            box.position = CGPoint(x: 75, y: 375)
+            box.alpha = 0
+            box.zPosition = 1001
+            self.addChild(box)
+            self.addChild(fuzzy)
+            let boxAction = SKAction.fadeIn(withDuration: 0.25)
+            let fuzzyAction = SKAction.fadeAlpha(to: 0.75, duration: 0.25)
+            box.run(boxAction)
+            fuzzy.run(fuzzyAction)
+        }
+        
+        if self.children.contains(box) && box.alpha == 1{
+            if !nodes.contains(box){
+                box.removeFromParent()
+                fuzzy.removeFromParent()
+            } else if nodes.contains(box.typeButton){
+                let scene:SKScene = SKScene(fileNamed: box.moveTo)!
+                pushToScene(scene: scene, direction: .left)
+            }
         }
     
         

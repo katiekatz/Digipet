@@ -29,6 +29,9 @@
 		02E8052B1F9F6996003D1C73 /* PlayPage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 02E8052A1F9F6996003D1C73 /* PlayPage.sks */; };
 		02E8052D1F9F69D4003D1C73 /* LearnPage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 02E8052C1F9F69D4003D1C73 /* LearnPage.sks */; };
 		02E8052F1F9F69E9003D1C73 /* SettingsPage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 02E8052E1F9F69E9003D1C73 /* SettingsPage.sks */; };
+		02F3CE9B201B6AAD008A7FA6 /* InfoLevelOneLessonOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 02F3CE9A201B6AAD008A7FA6 /* InfoLevelOneLessonOne.sks */; };
+		02F3CE9D201B6ADF008A7FA6 /* InfoLevelOneLessonOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3CE9C201B6ADF008A7FA6 /* InfoLevelOneLessonOne.swift */; };
+		02F3CE9F201B6B0A008A7FA6 /* LessonInfoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3CE9E201B6B0A008A7FA6 /* LessonInfoBox.swift */; };
 		7E090C441FBF21CA001B0D1C /* L1LessonOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */; };
 		7E090C461FBF21D6001B0D1C /* L1LessonOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */; };
 /* End PBXBuildFile section */
@@ -79,6 +82,9 @@
 		02E8052A1F9F6996003D1C73 /* PlayPage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayPage.sks; sourceTree = "<group>"; };
 		02E8052C1F9F69D4003D1C73 /* LearnPage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LearnPage.sks; sourceTree = "<group>"; };
 		02E8052E1F9F69E9003D1C73 /* SettingsPage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsPage.sks; sourceTree = "<group>"; };
+		02F3CE9A201B6AAD008A7FA6 /* InfoLevelOneLessonOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InfoLevelOneLessonOne.sks; sourceTree = "<group>"; };
+		02F3CE9C201B6ADF008A7FA6 /* InfoLevelOneLessonOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLevelOneLessonOne.swift; sourceTree = "<group>"; };
+		02F3CE9E201B6B0A008A7FA6 /* LessonInfoBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonInfoBox.swift; sourceTree = "<group>"; };
 		7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1LessonOne.swift; sourceTree = "<group>"; };
 		7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = L1LessonOne.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +148,7 @@
 				0209CA4D1FD5880300DDC91A /* SwiftySKScrollView.swift */,
 				028E89971FEBED7700D19441 /* LessonRow.swift */,
 				02867B4C2004F9870004B635 /* LessonStartBox.swift */,
+				02F3CE9E201B6B0A008A7FA6 /* LessonInfoBox.swift */,
 			);
 			path = Digipet;
 			sourceTree = "<group>";
@@ -180,6 +187,8 @@
 				022804ED1FBF19650087F8B3 /* LevelOne.sks */,
 				022804EF1FBF19950087F8B3 /* LevelOne.swift */,
 				022881F5200E392D00BF055F /* StartLevelOneLessonOne.sks */,
+				02F3CE9A201B6AAD008A7FA6 /* InfoLevelOneLessonOne.sks */,
+				02F3CE9C201B6ADF008A7FA6 /* InfoLevelOneLessonOne.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -298,6 +307,7 @@
 				02E8052B1F9F6996003D1C73 /* PlayPage.sks in Resources */,
 				022C69081F82650E0034833D /* GameScene.sks in Resources */,
 				02E8052D1F9F69D4003D1C73 /* LearnPage.sks in Resources */,
+				02F3CE9B201B6AAD008A7FA6 /* InfoLevelOneLessonOne.sks in Resources */,
 				022804EE1FBF19650087F8B3 /* LevelOne.sks in Resources */,
 				022C69131F82650E0034833D /* Assets.xcassets in Resources */,
 				022C69161F82650E0034833D /* LaunchScreen.storyboard in Resources */,
@@ -334,8 +344,10 @@
 				022C690E1F82650E0034833D /* GameViewController.swift in Sources */,
 				7E090C441FBF21CA001B0D1C /* L1LessonOne.swift in Sources */,
 				0222C1DE1FB09B7600CA8D29 /* LearnPage.swift in Sources */,
+				02F3CE9F201B6B0A008A7FA6 /* LessonInfoBox.swift in Sources */,
 				022C69061F82650E0034833D /* AppDelegate.swift in Sources */,
 				028E89981FEBED7700D19441 /* LessonRow.swift in Sources */,
+				02F3CE9D201B6ADF008A7FA6 /* InfoLevelOneLessonOne.swift in Sources */,
 				02E805281F9E18D4003D1C73 /* GameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

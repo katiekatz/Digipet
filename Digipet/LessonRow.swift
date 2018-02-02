@@ -43,7 +43,8 @@ public class LessonRow: SKSpriteNode {
         lessonName.fontName = "Plumpfull"
         lessonName.fontSize = 55
         lessonName.fontColor = .black
-        lessonName.position = CGPoint(x: -25, y: 150)
+        lessonName.horizontalAlignmentMode = .left
+        lessonName.position = CGPoint(x: -150, y: 150)
         self.addChild(lessonName)
         
         startButton = SKShapeNode(rect: CGRect(x: -145, y: 55, width: 200, height: 50), cornerRadius: 25)
