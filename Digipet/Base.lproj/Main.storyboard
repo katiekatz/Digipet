@@ -22,6 +22,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vpP-R5-f1r">
+                    <connections>
+                        <segue destination="ufl-Ln-rC7" kind="show" id="1ru-02-dLA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-225" y="-101"/>
         </scene>

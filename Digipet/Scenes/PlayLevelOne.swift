@@ -1,16 +1,16 @@
 //
-//  LevelOne.swift
+//  PlayLevelOne.swift
 //  Digipet
 //
-//  Created by Katie Katz on 11/17/17.
-//  Copyright © 2017 Katie Katz. All rights reserved.
+//  Created by Katie Katz on 2/2/18.
+//  Copyright © 2018 Katie Katz. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 import UIKit
 
-class LevelOne: SKScene {
+class PlayLevelOne: SKScene {
     
     //SwiftySKScrollView Attempt
     var scrollView: SwiftySKScrollView?
@@ -31,8 +31,8 @@ class LevelOne: SKScene {
     var row2Page1 : LessonRow!
     var row3Page1 : LessonRow!
     var row4Page1 : LessonRow!
-
-
+    
+    
     
     override func didMove(to view: SKView) {
         //fuzzyness
@@ -56,8 +56,8 @@ class LevelOne: SKScene {
         scrollView = SwiftySKScrollView(frame: CGRect(x: 0, y: 0, width: size.width, height: 1334), moveableNode: moveableNode, direction: .vertical)
         
         scrollView?.contentSize = CGSize(width: scrollView!.frame.width, height: scrollView!.frame.height + 2*984)
-    
-
+        
+        
         //this was supposed to be view? but that threw an error so we're trying this
         view.addSubview(scrollView!)
         
@@ -91,8 +91,8 @@ class LevelOne: SKScene {
         
         row4Page1 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -667, petName: "china", lN: "Lesson 4")
         page1ScrollView.addChild(row4Page1)
-    
-
+        
+        
         
         
         //REAL STUFF ON PAGE 2
@@ -108,7 +108,7 @@ class LevelOne: SKScene {
         let row4Page2 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: 246, petName: "china", lN: "Lesson 5")
         page2ScrollView.addChild(row4Page2)
         
-
+        
         
         //REAL STUFF ON PAGE 3
         let row1Page3 = LessonRow(size: CGSize(width: page1ScrollView.size.width, height: 246), y: -492, petName: "china", lN: "Lesson 12")
@@ -166,13 +166,13 @@ class LevelOne: SKScene {
         let nodes = self.nodes(at: touchLocation)
         
         if backArrow.contains(touchLocation) {
-            let scene:SKScene = SKScene(fileNamed: "LearnPage")!
+            let scene:SKScene = SKScene(fileNamed: "PlayPage")!
             pushToScene(scene: scene, direction: .right)
         }
         
         if nodes.contains(row1Page1.startButton) {
-            let scene:SKScene = SKScene(fileNamed: "StartLevelOneLessonOne")!
-            pushToScene(scene: scene, direction: .left)
+//            let scene:SKScene = SKScene(fileNamed: "StartLevelOneLessonOne")!
+//            pushToScene(scene: scene, direction: .left)
         }
         
         if nodes.contains(row1Page1.infoButton) {
@@ -210,7 +210,7 @@ class LevelOne: SKScene {
                 pushToScene(scene: scene, direction: .left)
             }
         }
-    
+        
         
         
     }
@@ -221,3 +221,4 @@ class LevelOne: SKScene {
     }
     
 }
+
