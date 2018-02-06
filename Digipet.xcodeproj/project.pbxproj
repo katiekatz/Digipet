@@ -33,6 +33,8 @@
 		02E8052D1F9F69D4003D1C73 /* LearnPage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 02E8052C1F9F69D4003D1C73 /* LearnPage.sks */; };
 		02E8052F1F9F69E9003D1C73 /* SettingsPage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 02E8052E1F9F69E9003D1C73 /* SettingsPage.sks */; };
 		02F3CE9F201B6B0A008A7FA6 /* LessonInfoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3CE9E201B6B0A008A7FA6 /* LessonInfoBox.swift */; };
+		6AC890462028B63500BEB0A5 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC890452028B63500BEB0A5 /* MainScreen.swift */; };
+		6ADF10C920293A0500B34B6B /* VoiceRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF10C820293A0500B34B6B /* VoiceRecognition.swift */; };
 		7E090C441FBF21CA001B0D1C /* L1LessonOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */; };
 		7E090C461FBF21D6001B0D1C /* L1LessonOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */; };
 /* End PBXBuildFile section */
@@ -87,6 +89,8 @@
 		02E8052C1F9F69D4003D1C73 /* LearnPage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LearnPage.sks; sourceTree = "<group>"; };
 		02E8052E1F9F69E9003D1C73 /* SettingsPage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsPage.sks; sourceTree = "<group>"; };
 		02F3CE9E201B6B0A008A7FA6 /* LessonInfoBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonInfoBox.swift; sourceTree = "<group>"; };
+		6AC890452028B63500BEB0A5 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		6ADF10C820293A0500B34B6B /* VoiceRecognition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceRecognition.swift; sourceTree = "<group>"; };
 		7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1LessonOne.swift; sourceTree = "<group>"; };
 		7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = L1LessonOne.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,10 +143,12 @@
 		022C69041F82650E0034833D /* Digipet */ = {
 			isa = PBXGroup;
 			children = (
+				6ADF10C820293A0500B34B6B /* VoiceRecognition.swift */,
 				02E805291F9F6926003D1C73 /* Scenes */,
 				022C69051F82650E0034833D /* AppDelegate.swift */,
 				022C69091F82650E0034833D /* Actions.sks */,
 				022C690D1F82650E0034833D /* GameViewController.swift */,
+				6AC890452028B63500BEB0A5 /* MainScreen.swift */,
 				022C690F1F82650E0034833D /* Main.storyboard */,
 				022C69121F82650E0034833D /* Assets.xcassets */,
 				022C69141F82650E0034833D /* LaunchScreen.storyboard */,
@@ -349,6 +355,8 @@
 				022C690E1F82650E0034833D /* GameViewController.swift in Sources */,
 				7E090C441FBF21CA001B0D1C /* L1LessonOne.swift in Sources */,
 				0222C1DE1FB09B7600CA8D29 /* LearnPage.swift in Sources */,
+				6AC890462028B63500BEB0A5 /* MainScreen.swift in Sources */,
+				6ADF10C920293A0500B34B6B /* VoiceRecognition.swift in Sources */,
 				02F3CE9F201B6B0A008A7FA6 /* LessonInfoBox.swift in Sources */,
 				022C69061F82650E0034833D /* AppDelegate.swift in Sources */,
 				028E89981FEBED7700D19441 /* LessonRow.swift in Sources */,
