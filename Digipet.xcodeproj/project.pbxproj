@@ -21,6 +21,7 @@
 		022C69161F82650E0034833D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022C69141F82650E0034833D /* LaunchScreen.storyboard */; };
 		022C69211F82650E0034833D /* DigipetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C69201F82650E0034833D /* DigipetTests.swift */; };
 		022C692C1F82650E0034833D /* DigipetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022C692B1F82650E0034833D /* DigipetUITests.swift */; };
+		02359C902048376D00DA5BA4 /* Learn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02359C8F2048376D00DA5BA4 /* Learn.swift */; };
 		02395D8B2024A1E900602AE9 /* PlayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02395D8A2024A1E900602AE9 /* PlayPage.swift */; };
 		02395D8F2024A29C00602AE9 /* PlayPage.sks in Resources */ = {isa = PBXBuildFile; fileRef = 02395D8E2024A29C00602AE9 /* PlayPage.sks */; };
 		02395D912024A46700602AE9 /* PlayLevelOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02395D902024A46700602AE9 /* PlayLevelOne.swift */; };
@@ -77,6 +78,7 @@
 		022C69271F82650E0034833D /* DigipetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigipetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		022C692B1F82650E0034833D /* DigipetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigipetUITests.swift; sourceTree = "<group>"; };
 		022C692D1F82650E0034833D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02359C8F2048376D00DA5BA4 /* Learn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Learn.swift; path = Digipet/Learn.swift; sourceTree = SOURCE_ROOT; };
 		02395D8A2024A1E900602AE9 /* PlayPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPage.swift; sourceTree = "<group>"; };
 		02395D8E2024A29C00602AE9 /* PlayPage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PlayPage.sks; sourceTree = "<group>"; };
 		02395D902024A46700602AE9 /* PlayLevelOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayLevelOne.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				022C690D1F82650E0034833D /* GameViewController.swift */,
 				6AC890452028B63500BEB0A5 /* MainScreen.swift */,
 				022C690F1F82650E0034833D /* Main.storyboard */,
+				02359C8F2048376D00DA5BA4 /* Learn.swift */,
 				022C69121F82650E0034833D /* Assets.xcassets */,
 				022C69141F82650E0034833D /* LaunchScreen.storyboard */,
 				022C69171F82650E0034833D /* Info.plist */,
@@ -354,6 +357,7 @@
 				02395D8B2024A1E900602AE9 /* PlayPage.swift in Sources */,
 				022C690E1F82650E0034833D /* GameViewController.swift in Sources */,
 				7E090C441FBF21CA001B0D1C /* L1LessonOne.swift in Sources */,
+				02359C902048376D00DA5BA4 /* Learn.swift in Sources */,
 				0222C1DE1FB09B7600CA8D29 /* LearnPage.swift in Sources */,
 				6AC890462028B63500BEB0A5 /* MainScreen.swift in Sources */,
 				6ADF10C920293A0500B34B6B /* VoiceRecognition.swift in Sources */,
