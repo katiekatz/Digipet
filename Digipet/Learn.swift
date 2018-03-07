@@ -11,31 +11,45 @@ import UIKit
 
 class Learn : UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var backArrow: UIButton!
-    @IBOutlet weak var level1: UILabel!
-    @IBOutlet weak var level2: UILabel!
-    @IBOutlet weak var level3: UILabel!
-    @IBOutlet weak var level4: UILabel!
-    @IBOutlet weak var level5: UILabel!
-    @IBOutlet weak var level6: UILabel!
+    @IBOutlet weak var level1: UIButton!
+    @IBOutlet weak var level2: UIButton!
+    @IBOutlet weak var level3: UIButton!
+    @IBOutlet weak var level4: UIButton!
+    @IBOutlet weak var level5: UIButton!
+    @IBOutlet weak var level6: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        level1.layer.borderColor = UIColor.black.cgColor
-        level1.layer.borderWidth = 2
-        level2.layer.borderColor = UIColor.black.cgColor
-        level2.layer.borderWidth = 2
-        level3.layer.borderColor = UIColor.black.cgColor
-        level3.layer.borderWidth = 2
-        level4.layer.borderColor = UIColor.black.cgColor
-        level4.layer.borderWidth = 2
-        level5.layer.borderColor = UIColor.black.cgColor
-        level5.layer.borderWidth = 2
-        level6.layer.borderColor = UIColor.black.cgColor
-        level6.layer.borderWidth = 2
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.searchBar.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? LevelVC {
+            switch sender as? UIButton {
+            case level1?:
+                vc.text = "1"
+            case level2?:
+                vc.text = "2"
+            case level3?:
+                vc.text = "3"
+            case level4?:
+                vc.text = "4"
+            case level5?:
+                vc.text = "5"
+            case level6?:
+                vc.text = "6"
+            default:
+                vc.text = "error"
+            }
+        }
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
