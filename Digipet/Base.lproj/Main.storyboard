@@ -47,7 +47,7 @@
                                 <rect key="frame" x="-244" y="0.0" width="743" height="801"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yp-H9-bxo">
-                                <rect key="frame" x="240" y="862" width="99.5" height="220"/>
+                                <rect key="frame" x="240" y="532" width="90" height="100"/>
                                 <state key="normal" backgroundImage="playbutton"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="basicskyline" translatesAutoresizingMaskIntoConstraints="NO" id="jU8-6F-O88">
@@ -66,8 +66,8 @@
                                     <segue destination="3eF-DO-C7J" kind="show" id="5gb-ie-3Hy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvh-gh-qKk">
-                                <rect key="frame" x="328" y="-8" width="37" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvh-gh-qKk">
+                                <rect key="frame" x="323" y="20" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Qhj-eP-ezy"/>
                                     <constraint firstAttribute="width" constant="37" id="wGl-VY-fOn"/>
