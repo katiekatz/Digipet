@@ -70,6 +70,7 @@
                                 <rect key="frame" x="328" y="-8" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Qhj-eP-ezy"/>
+                                    <constraint firstAttribute="width" constant="37" id="wGl-VY-fOn"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="settings"/>
                             </button>
@@ -97,9 +98,10 @@
                             <constraint firstItem="YwW-rS-RRZ" firstAttribute="leading" secondItem="jU8-6F-O88" secondAttribute="leading" constant="-237" id="BrZ-wJ-LLD"/>
                             <constraint firstItem="YwW-rS-RRZ" firstAttribute="top" secondItem="ydX-lT-IpQ" secondAttribute="top" id="EyY-PV-Wc6"/>
                             <constraint firstItem="xOz-VK-gRk" firstAttribute="top" secondItem="jU8-6F-O88" secondAttribute="bottom" constant="61" id="JCc-Sx-tsk"/>
+                            <constraint firstItem="gBK-gl-mix" firstAttribute="trailing" secondItem="XtO-qb-K8c" secondAttribute="trailing" constant="53" id="KLQ-WS-BO8"/>
                             <constraint firstItem="ydX-lT-IpQ" firstAttribute="leading" secondItem="YwW-rS-RRZ" secondAttribute="leading" constant="244" id="Ns2-bP-Scx"/>
                             <constraint firstItem="tvh-gh-qKk" firstAttribute="leading" secondItem="gBK-gl-mix" secondAttribute="leading" constant="328" id="Nxq-SB-uMs"/>
-                            <constraint firstItem="tvh-gh-qKk" firstAttribute="top" secondItem="gBK-gl-mix" secondAttribute="top" constant="-8" id="Nzg-Ox-cXg"/>
+                            <constraint firstItem="tvh-gh-qKk" firstAttribute="top" secondItem="gBK-gl-mix" secondAttribute="top" id="Nzg-Ox-cXg"/>
                             <constraint firstItem="ydX-lT-IpQ" firstAttribute="trailing" secondItem="YwW-rS-RRZ" secondAttribute="trailing" constant="-124" id="OfR-Eb-gPw"/>
                             <constraint firstItem="0yp-H9-bxo" firstAttribute="leading" secondItem="XKW-GW-uo1" secondAttribute="trailing" constant="33.5" id="Qkk-ie-9E0"/>
                             <constraint firstItem="cEk-cz-0DN" firstAttribute="top" secondItem="XtO-qb-K8c" secondAttribute="bottom" constant="14" id="Rxc-GI-zaV"/>
@@ -117,13 +119,13 @@
                             <constraint firstItem="XtO-qb-K8c" firstAttribute="leading" secondItem="xOz-VK-gRk" secondAttribute="leading" constant="17" id="e75-1H-KLk"/>
                             <constraint firstItem="XKW-GW-uo1" firstAttribute="top" secondItem="cEk-cz-0DN" secondAttribute="bottom" constant="96" id="evG-Z2-43p"/>
                             <constraint firstItem="XtO-qb-K8c" firstAttribute="leading" secondItem="sOe-hF-uYz" secondAttribute="leadingMargin" constant="37" id="ezc-Xh-oW1"/>
-                            <constraint firstItem="gBK-gl-mix" firstAttribute="trailing" secondItem="tvh-gh-qKk" secondAttribute="trailing" constant="10" id="g0T-gG-MjL"/>
                             <constraint firstItem="jU8-6F-O88" firstAttribute="centerX" secondItem="XKW-GW-uo1" secondAttribute="centerX" constant="5" id="kGm-ui-x6a"/>
                             <constraint firstAttribute="trailing" secondItem="ydX-lT-IpQ" secondAttribute="trailing" id="mrt-wE-a9E"/>
                             <constraint firstItem="YwW-rS-RRZ" firstAttribute="top" secondItem="sOe-hF-uYz" secondAttribute="top" id="qnA-Sz-KvX"/>
-                            <constraint firstItem="tvh-gh-qKk" firstAttribute="trailing" secondItem="0yp-H9-bxo" secondAttribute="trailing" constant="25.5" id="xPU-XW-2hK"/>
+                            <constraint firstItem="tvh-gh-qKk" firstAttribute="trailing" secondItem="0yp-H9-bxo" secondAttribute="trailing" constant="30" id="xPU-XW-2hK"/>
                             <constraint firstItem="XtO-qb-K8c" firstAttribute="centerX" secondItem="jU8-6F-O88" secondAttribute="centerX" constant="-5" id="xoO-I9-gah"/>
                             <constraint firstItem="YwW-rS-RRZ" firstAttribute="trailing" secondItem="jU8-6F-O88" secondAttribute="trailing" constant="107" id="y0I-eg-h0s"/>
+                            <constraint firstItem="gBK-gl-mix" firstAttribute="trailing" secondItem="tvh-gh-qKk" secondAttribute="trailing" constant="15" id="zsg-hu-pwv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gBK-gl-mix"/>
                     </view>
