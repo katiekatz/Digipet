@@ -45,7 +45,7 @@ class LevelVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         guard let tableController = childViewControllers.first as? LessonTableViewController else {
             fatalError("uh oh where'd the TVC go???")
         }

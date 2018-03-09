@@ -12,4 +12,9 @@ class LessonStart : UIViewController {
     
 //    var lesson : Lesson?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
 }
