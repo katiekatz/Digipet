@@ -1,8 +1,8 @@
 //
-//  StartLevelOneLessonOne.swift
+//  PlayPage.swift
 //  Digipet
 //
-//  Created by Katie Katz on 1/11/18.
+//  Created by Katie Katz on 2/2/18.
 //  Copyright © 2018 Katie Katz. All rights reserved.
 //
 
@@ -10,28 +10,28 @@ import SpriteKit
 import GameplayKit
 import UIKit
 
-class StartLevelOneLessonOne: SKScene {
+class PlayPage: SKScene {
     
     var backArrow: SKSpriteNode!
     var menuIcon: SKSpriteNode!
-    var box: LessonStartBox!
-    var petImg: SKSpriteNode!
-
+    var oneTouch: SKSpriteNode!
+    var twoTouch: SKSpriteNode!
+    var threeTouch: SKSpriteNode!
+    var fourTouch: SKSpriteNode!
+    var fiveTouch: SKSpriteNode!
+    var sixTouch: SKSpriteNode!
     
     override func didMove(to view: SKView) {
-        backArrow = SKSpriteNode(texture: SKTexture(imageNamed: "arrowicon"))
-        menuIcon = SKSpriteNode(texture: SKTexture(imageNamed: "menuicon"))
-        box = LessonStartBox(lN: "LESSON 1", l1: "holja", l2: "bonjour", l3: "你好", l4: "ciaojh")
-        petImg = SKSpriteNode(texture: SKTexture(imageNamed: "china"), size: CGSize(width: 300, height: 420))
-
+        backArrow = childNode(withName: "//backArrow") as! SKSpriteNode
+        menuIcon = childNode(withName: "//menuIcon") as! SKSpriteNode
+        oneTouch = childNode(withName: "//oneTouch") as! SKSpriteNode
+        twoTouch = childNode(withName: "//twoTouch") as! SKSpriteNode
+        threeTouch = childNode(withName: "//threeTouch") as! SKSpriteNode
+        fourTouch = childNode(withName: "//fourTouch") as! SKSpriteNode
+        fiveTouch = childNode(withName: "//fiveTouch") as! SKSpriteNode
+        sixTouch = childNode(withName: "//sixTouch") as! SKSpriteNode
         backArrow.position = CGPoint(x: 92, y: 1267)
         menuIcon.position = CGPoint(x: 658, y: 1267)
-        box.position = CGPoint(x: 75, y: 275)
-        petImg.position = CGPoint(x: 375, y: 875)
-        self.addChild(backArrow)
-        self.addChild(menuIcon)
-        self.addChild(box)
-        self.addChild(petImg)
     }
     
     func pushToScene(scene: SKScene, direction: SKTransitionDirection) {
@@ -45,19 +45,16 @@ class StartLevelOneLessonOne: SKScene {
         
         let touchLocation = touch.location(in: self)
         
-        let nodes = self.nodes(at: touchLocation)
-        
         if backArrow.contains(touchLocation) {
-            let scene:SKScene = SKScene(fileNamed: "LevelOne")!
+            let scene:SKScene = SKScene(fileNamed: "GameScene")!
             pushToScene(scene: scene, direction: .right)
         }
         
-        if nodes.contains(box.typeButton) {
-            let scene:SKScene = SKScene(fileNamed: "L1LessonOne")!
+        if oneTouch.contains(touchLocation) {
+            let scene:SKScene = SKScene(fileNamed: "LevelOne")!
             pushToScene(scene: scene, direction: .left)
         }
         
-
-        
     }
 }
+
