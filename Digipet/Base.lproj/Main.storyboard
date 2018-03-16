@@ -19,8 +19,6 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <tapGestureRecognizer id="vpP-R5-f1r"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Digipet" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -29,6 +27,8 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                 </viewController>
+                <tapGestureRecognizer id="vpP-R5-f1r"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-428" y="-512"/>
         </scene>
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgx-zd-u2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="638"/>
+            <point key="canvasLocation" x="3705" y="-81"/>
         </scene>
         <!--Voice Recognition-->
         <scene sceneID="pIq-2f-Key">
@@ -745,30 +745,6 @@
             </objects>
             <point key="canvasLocation" x="2117.5999999999999" y="-81.409295352323838"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="717-0l-uf9">
-            <objects>
-                <viewController id="aQF-CR-EBF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m0U-0J-wzc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lesson page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGZ-Vq-BVm">
-                                <rect key="frame" x="141" y="323" width="92" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="mUW-vS-STW"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xdO-9m-fn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3646" y="-81"/>
-        </scene>
         <!--Lesson Start-->
         <scene sceneID="i3p-7i-gdZ">
             <objects>
@@ -834,6 +810,9 @@
                                         <state key="normal" title="type">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="PHM-JX-2mO" kind="show" id="kXe-pj-Sij"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAa-zM-koe" customClass="LessonButton" customModule="Digipet" customModuleProvider="target">
                                         <rect key="frame" x="40" y="232" width="100" height="28"/>
@@ -987,7 +966,7 @@
         <image name="wallday" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7SJ-4W-tIA"/>
+        <segue reference="XYP-Bf-uJt"/>
         <segue reference="5gb-ie-3Hy"/>
     </inferredMetricsTieBreakers>
 </document>
