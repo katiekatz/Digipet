@@ -12,6 +12,7 @@ class LessonTableViewController : UITableViewController {
     
     var lessonNumber : String = "0"
     var lessonList = [Lesson]()
+    var color : CGColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class LessonTableViewController : UITableViewController {
         tableView.tableFooterView = UIView()
         
         tableView.alwaysBounceVertical = false
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,7 +45,8 @@ class LessonTableViewController : UITableViewController {
         
         cell.lessonName.text = lesson.name
         cell.petImg.image = UIImage(named: lesson.petImg)
-        cell.startButton.file = lesson
+        cell.startButton.lesson = lesson
+        cell.startButton.layer.borderColor = color
         return cell
         
         
@@ -51,9 +54,10 @@ class LessonTableViewController : UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? LevelVC {
-            let sb = sender as! StartButton
+            let ib = sender as! LessonButton
+            vc.lessonFocus = ib.lesson
             vc.text = lessonNumber
-            vc.shouldTransition = "lessonStart"
+            vc.showInfo = "yes"
         }
     }
 

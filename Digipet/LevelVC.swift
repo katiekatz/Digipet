@@ -18,13 +18,13 @@ class LevelVC : UIViewController {
     var l5Lessons = [Lesson]()
     var l6Lessons = [Lesson]()
     
-    let lesson1 = Lesson(name: "Caprese Salad", petImg: "china", fileDest: "ha")!
-    let lesson2 = Lesson(name: "TeSt, how long is this", petImg: "china", fileDest: "ha")!
-    let lesson3 = Lesson(name: "testing", petImg: "china", fileDest: "ha2")!
-    let lesson4 = Lesson(name: "bwahaha", petImg: "china", fileDest: "ha")!
-    let lesson5 = Lesson(name: "will this work?", petImg: "china", fileDest: "ha")!
-    let lesson6 = Lesson(name: "abcxyz123", petImg: "china", fileDest: "ha")!
-    let lesson7 = Lesson(name: "Nikki Blonsky", petImg: "china", fileDest: "ha")!
+    let lesson1 = Lesson(name: "Basics I", petImg: "china", fileDest: "ha", infoVH: "hello, goodbye, yes, no, maybe, okay, please, thank you, you're welcome, good morning...", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa ab abaw erfwarf awefaw svawraf aewjn", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson2 = Lesson(name: "TeSt, how long is this", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson3 = Lesson(name: "testing", petImg: "china", fileDest: "ha2", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson4 = Lesson(name: "bwahaha", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson5 = Lesson(name: "will this work?", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson6 = Lesson(name: "abcxyz123", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson7 = Lesson(name: "Nikki Blonsky", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
 
     
     let colorDef = UIColor(red: 127/255.0, green: 70/255.0, blue: 221/255.0, alpha: 1)
@@ -36,22 +36,49 @@ class LevelVC : UIViewController {
     let color6 = UIColor(red: 252/255.0, green: 238/255.0, blue: 34/255.0, alpha: 1)
     
     var text:String = "0"
-    var shouldTransition:String = "nil"
-    var lessonStartDisplay : Lesson?
+    var showInfo:String = "nil"
     var tableViewController : LessonTableViewController?
+    var lessonFocus : Lesson?
     
     @IBOutlet weak var lessonNumber: UILabel!
+    @IBOutlet weak var blur: UIVisualEffectView!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var infoLessonName: UILabel!
+    @IBOutlet weak var infoVH: UILabel!
+    @IBOutlet weak var infoGD: UILabel!
+    @IBOutlet weak var infoStartButton: LessonButton!
+    @IBOutlet weak var infoBackButton: LessonButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         guard let tableController = childViewControllers.first as? LessonTableViewController else {
             fatalError("uh oh where'd the TVC go???")
         }
         
         tableViewController = tableController
+        blur.isHidden = true
         
+        infoView.layer.borderColor = UIColor.black.cgColor
+        infoView.layer.borderWidth = 3
+        infoView.layer.cornerRadius = 10
+        infoLessonName.text = lessonFocus?.name
+        infoVH.text = lessonFocus?.infoVH
+        infoGD.text = lessonFocus?.infoGD
+        infoStartButton.layer.borderColor = color1.cgColor
+        infoStartButton.layer.cornerRadius = 14
+        infoStartButton.layer.masksToBounds = true
+        infoStartButton.layer.borderWidth = 2
+        infoStartButton.layer.backgroundColor = UIColor(red: 249/255.0, green: 249/255.0, blue: 249/255.0, alpha: 1).cgColor
+        infoBackButton.layer.borderColor = color2.cgColor
+        infoBackButton.layer.cornerRadius = 14
+        infoBackButton.layer.masksToBounds = true
+        infoBackButton.layer.borderWidth = 2
+        infoBackButton.layer.backgroundColor = UIColor(red: 249/255.0, green: 249/255.0, blue: 249/255.0, alpha: 1).cgColor
+        
+        infoView.isHidden = true
+    
         
         //lessons test code
         l1Lessons += [lesson1, lesson2, lesson3, lesson4, lesson5, lesson6]
@@ -63,33 +90,56 @@ class LevelVC : UIViewController {
         case "1":
             lessonNumber?.textColor = color1
             tableViewController?.lessonList = l1Lessons
+            tableViewController?.color = color1.cgColor
         case "2":
             lessonNumber?.textColor = color2
             tableViewController?.lessonList = l2Lessons
+            tableViewController?.color = color2.cgColor
         case "3":
             lessonNumber?.textColor = color3
             tableViewController?.lessonList = l3Lessons
+            tableViewController?.color = color3.cgColor
         case "4":
             lessonNumber?.textColor = color4
             tableViewController?.lessonList = l4Lessons
+            tableViewController?.color = color4.cgColor
         case "5":
             lessonNumber?.textColor = color5
             tableViewController?.lessonList = l5Lessons
+            tableViewController?.color = color5.cgColor
         case "6":
             lessonNumber?.textColor = color6
             tableViewController?.lessonList = l6Lessons
+            tableViewController?.color = color6.cgColor
         default:
             fatalError("lesson clicked wasn't 1-6???")
         }
         
+        if showInfo == "yes" {
+            blur.isHidden = false
+            infoView.isHidden = false
+            infoStartButton.lesson = lessonFocus
+        }
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if shouldTransition == "lessonStart" {
-            performSegue(withIdentifier: "LevelToLessonStart", sender: nil)
+    @IBAction func startButtonTapped(_ sender: Any) {
+        showInfo = "nil"
+        performSegue(withIdentifier: "LevelToLessonStart", sender: nil)
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        blur.isHidden = true
+        infoView.isHidden = true
+        showInfo = "nil"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? LessonStart {
+            vc.lesson = lessonFocus
+            vc.level = text
         }
     }
-
     
     override var shouldAutorotate: Bool {
         return true

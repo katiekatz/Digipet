@@ -24,7 +24,7 @@ class VoiceRecognition: UIViewController, SFSpeechRecognizerDelegate {
        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "fr_FR"))
     }
     @IBAction func spanishPress(_ sender: Any) {
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "es_ES"))
+        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko_KR"))
     }
     @IBAction func mandarinPress(_ sender: Any) {
         speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier:   "zh_Hans"))
