@@ -14,18 +14,61 @@ import Foundation
 class L1LessonOne: SKScene {
     var Pet1: SKSpriteNode!
     var Pet2: SKSpriteNode!
-    var talkButton: SKSpriteNode!
-    var sBubble: SKSpriteNode!
+    var sBubble1: SKSpriteNode!
     var sBubble2: SKSpriteNode!
-    var petText: SKLabelNode!
-    var petText2: SKLabelNode!
-    var petText22: SKLabelNode!
+    var pet1Text: SKLabelNode!
+    var pet2Text: SKLabelNode!
+    var pet2Text2: SKLabelNode!
+    
+    var talkButton: SKSpriteNode!
     var headerText: SKLabelNode!
-    let group = DispatchGroup()
+    var backArrow: SKSpriteNode!
+    
     var array: [() -> ()] = []
     var counter: Int = 0
-    var animationRunning = false
-    var backArrow: SKSpriteNode!
+    
+    override func didMove(to view: SKView) {
+        Pet1 = SKSpriteNode(imageNamed: "china")
+        Pet1.size = CGSize(width: 375, height: 518)
+        Pet1.zPosition = 1.0
+        Pet1.position = CGPoint(x: self.frame.size.width, y: self.frame.size.height * -0.388)
+        addChild(Pet1)
+        
+        Pet2 = SKSpriteNode(imageNamed: "china")
+        Pet2.size = CGSize(width: 321, height: 444)
+        Pet2.color = UIColor.red
+        Pet2.colorBlendFactor = 0.5
+        Pet2.zPosition = 1.0
+        Pet2.position = CGPoint(x: self.frame.size.width, y: self.frame.size.height * -0.388 + 74)
+        addChild(Pet2)
+        
+        talkButton = childNode(withName: "//talkButton") as! SKSpriteNode
+        talkButton.isHidden = true
+        
+        sBubble1 = childNode(withName: "//sBubble1") as! SKSpriteNode
+        sBubble1.isHidden = true
+        
+        sBubble2 = childNode(withName: "//sBubble2") as! SKSpriteNode
+        sBubble2.isHidden = true
+        
+        pet1Text = childNode(withName: "//pet1Text") as! SKLabelNode
+        pet1Text.isHidden = true
+        
+        pet2Text = childNode(withName: "//pet2Text") as! SKLabelNode
+        pet2Text.isHidden = true
+        pet2Text2 = childNode(withName: "//pet2Text2") as! SKLabelNode
+        pet2Text2.isHidden = true
+        
+        headerText = childNode(withName: "//headerText") as! SKLabelNode
+        headerText.fontName = "Plumpfull"
+        headerText.isHidden = true
+        
+        backArrow = childNode(withName: "//backArrow") as! SKSpriteNode
+        
+        array = [firstQuestion, sunrise, askQuestion, andYou, pet3, doYouSpeak, howDoYouSay, howDoYouSay2, thank, goodbye]
+        
+        runLesson()
+    }
     
     func goToScene(scene: SKScene) {
         let sceneTransition = SKTransition.push(with: .left, duration: 0.5)
@@ -39,102 +82,47 @@ class L1LessonOne: SKScene {
         return (NSString(data: inputData, encoding: String.Encoding.utf8.rawValue)! as String)
     }
     
-    override func didMove(to view: SKView) {
-        Pet1 = SKSpriteNode(imageNamed: "china")
-        Pet1.size = CGSize(width: 375, height: 518)
-        Pet1.zPosition = 1.0
-        Pet1.position = CGPoint(x: self.frame.size.width, y: self.frame.size.height * -0.388)
-        addChild(Pet1)
-        
-        Pet2 = SKSpriteNode(imageNamed: "china")
-        Pet2.size = CGSize(width: 321, height: 444)
-        Pet2.zPosition = 1.0
-        Pet2.position = CGPoint(x: self.frame.size.width, y: self.frame.size.height * -0.388 + 74)
-        addChild(Pet2)
-        
-        talkButton = childNode(withName: "//talkButton") as! SKSpriteNode
-        talkButton.isHidden = true
-        
-        sBubble = childNode(withName: "//sBubble") as! SKSpriteNode
-        sBubble.isHidden = true
-        
-        sBubble2 = childNode(withName: "//sBubble2") as! SKSpriteNode
-        sBubble2.isHidden = true
-        
-        petText = childNode(withName: "//petText") as! SKLabelNode
-        petText.isHidden = true
-        
-        petText2 = childNode(withName: "//petText2") as! SKLabelNode
-        petText2.isHidden = true
-        petText22 = childNode(withName: "//petText22") as! SKLabelNode
-        petText22.isHidden = true
-        
-        headerText = childNode(withName: "//headerText") as! SKLabelNode
-        headerText.fontName = "Plumpfull"
-        headerText.isHidden = true
-        
-        backArrow = childNode(withName: "//backArrow") as! SKSpriteNode
-        
-        array = [firstQuestion, sunrise, askQuestion, andYou, pet3, doYouSpeak, howDoYouSay, howDoYouSay2, thank, goodbye]
-        
-        runLesson()
-    }
-    
     func runLesson() {
-//        self.group.enter()
           entranceAnimation()
-//
-//        self.group.enter()
-//        firstQuestion()
-//
-//        self.group.enter()
-//        secondPet()
     }
     
     func entranceAnimation() {
-        animationRunning = true
         let action = SKAction(named: "WalkIn")
         Pet1.run(action!)
         
         Timer.scheduledTimer(withTimeInterval: 4.5, repeats: false) {
             timer in
             
-            self.sBubble.isHidden = false
-            self.petText.text = "Hello!"
-            self.petText.isHidden = false
+            self.sBubble1.isHidden = false
+            self.pet1Text.text = "Hello!"
+            self.pet1Text.isHidden = false
             
             Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) {
                 timer in
                 
                 self.talkButton.isHidden = false
-                
-                self.animationRunning = false
-//                self.group.leave()
             }
         }
         
-//        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-//        DispatchQueue.main.asyncAfter(deadline: when) {
-//            self.sBubble.isHidden = false
-//            self.petText.isHidden = false
-//        }
-//
-//        self.talkButton.isHidden = false
     }
     
     func firstQuestion() {
-        self.petText.text = "How are you?"
-//        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
-//            timer in
-//        }
+        talkButton.isHidden = true
+        self.pet1Text.text = "How are you?"
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+            
+                    self.talkButton.isHidden = false
+                }
     }
     
     func sunrise() {
-        self.petText.text = "Welcome!"
+        talkButton.isHidden = true
+        self.pet1Text.text = "Welcome!"
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
             timer in
-            self.petText.text = "Pet!"
+            self.pet1Text.text = "Pet!"
             self.Pet2.run(SKAction(named: "WalkIn1")!)
             
             Timer.scheduledTimer(withTimeInterval: 5, repeats: false) {
@@ -157,9 +145,14 @@ class L1LessonOne: SKScene {
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: false) {
                     timer in
                     
-                    self.petText2.text = "Good Morning!"
-                    self.petText2.isHidden = false
+                    self.pet2Text.text = "Good Morning!"
+                    self.pet2Text.isHidden = false
                     self.sBubble2.isHidden = false
+                    Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+                    
+                    self.talkButton.isHidden = false
+                }
                 }
                 
             }
@@ -168,25 +161,38 @@ class L1LessonOne: SKScene {
     }
     
     func askQuestion() {
+        talkButton.isHidden = true
         headerText.isHidden = false
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+            
+                    self.talkButton.isHidden = false
+                }
     }
     
     func andYou() {
-        petText2.text = "I'm good,"
-        petText22.text = "and you?"
-        petText22.isHidden = false
+        talkButton.isHidden = true
+        pet2Text.text = "I'm good,"
+        pet2Text2.text = "and you?"
+        pet2Text2.isHidden = false
         Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) {
             timer in
             self.headerText.text = "😐"
+            Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+                
+                    self.talkButton.isHidden = false
+                }
         }
     }
     
     func pet3() {
+        talkButton.isHidden = true
         Pet2.run(SKAction(named: "WalkOut")!)
-        petText2.text = ""
-        petText22.text = ""
-        petText2.isHidden = true
-        petText22.isHidden = true
+        pet2Text.text = ""
+        pet2Text2.text = ""
+        pet2Text.isHidden = true
+        pet2Text2.isHidden = true
         sBubble2.isHidden = true
         
         Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) {
@@ -196,10 +202,15 @@ class L1LessonOne: SKScene {
             
             Timer.scheduledTimer(withTimeInterval: 3, repeats: false) {
                 timer in
-                self.petText2.isHidden = false
-                self.petText22.isHidden = false
+                self.pet2Text.isHidden = false
+                self.pet2Text2.isHidden = false
                 self.sBubble2.isHidden = false
-                self.petText2.text = "Good afternoon."
+                self.pet2Text.text = "Good afternoon."
+                Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+                    
+                    self.talkButton.isHidden = false
+                }
             }
             
         }
@@ -207,28 +218,58 @@ class L1LessonOne: SKScene {
     }
     
     func doYouSpeak() {
-        petText2.text = "Do you speak"
-        petText22.text = "_______?"
+        talkButton.isHidden = true
+        pet2Text.text = "Do you speak"
+        pet2Text2.text = "_______?"
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+            
+                    self.talkButton.isHidden = false
+                }
     }
     
     func howDoYouSay() {
-        petText2.text = "How do you say"
-        petText22.text =  "\"sorry\"?"
+        talkButton.isHidden = true
+        pet2Text.text = "How do you say"
+        pet2Text2.text =  "\"sorry\"?"
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+            
+                    self.talkButton.isHidden = false
+                }
     }
     
     func howDoYouSay2() {
-        petText2.text = "And how do you"
-        petText22.text = "say \"It's okay\"?"
+        talkButton.isHidden = true
+        pet2Text.text = "And how do you"
+        pet2Text2.text = "say \"It's okay\"?"
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+            
+                    self.talkButton.isHidden = false
+                }
 
     }
     
     func thank() {
-        petText2.text = "Thank you!"
-        petText22.text = ""
+        talkButton.isHidden = true
+        pet2Text.text = "Thank you!"
+        pet2Text2.text = ""
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+            
+                    self.talkButton.isHidden = false
+                }
     }
     
     func goodbye() {
-        petText.text = "Goodbye!"
+        talkButton.isHidden = true
+        pet1Text.text = "Goodbye!"
+        Timer.scheduledTimer(withTimeInterval: 0.75, repeats: false) {
+                    timer in
+            
+                    self.talkButton.isHidden = false
+                }
     }
     
 //    @IBAction func doSomething(sender: SKSpriteNode!) {
