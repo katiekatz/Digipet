@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sgx-Yj-ML6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sgx-Yj-ML6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -428,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgx-zd-u2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3705" y="-81"/>
+            <point key="canvasLocation" x="3713" y="-81"/>
         </scene>
         <!--Voice Recognition-->
         <scene sceneID="pIq-2f-Key">
@@ -824,6 +824,9 @@
                                         <state key="normal" title="talk">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="MSs-pT-u5w" kind="show" id="LuE-Te-RN8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -949,6 +952,79 @@
             </objects>
             <point key="canvasLocation" x="2877.5999999999999" y="637.78110944527737"/>
         </scene>
+        <!--NewL1 Lesson One-->
+        <scene sceneID="jWK-48-vIC">
+            <objects>
+                <viewController id="MSs-pT-u5w" customClass="NewL1LessonOne" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VfU-FM-AVB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="daybackground" translatesAutoresizingMaskIntoConstraints="NO" id="Brp-4o-nhF">
+                                <rect key="frame" x="1" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallday" translatesAutoresizingMaskIntoConstraints="NO" id="P9K-ha-438">
+                                <rect key="frame" x="1" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-Fl-HGa">
+                                <rect key="frame" x="324" y="20" width="35" height="25"/>
+                                <state key="normal" image="menuicon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLs-Db-HlH">
+                                <rect key="frame" x="31" y="525" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="K04-zw-6Ho"/>
+                                </constraints>
+                                <state key="normal" image="talk"/>
+                                <connections>
+                                    <action selector="printMessage" destination="MSs-pT-u5w" eventType="touchDown" id="vmj-b1-1C0"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z5J-cy-no9">
+                                <rect key="frame" x="68" y="20" width="240" height="39"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="6gs-Hs-LyG"/>
+                                    <constraint firstAttribute="height" constant="39" id="kmk-Rt-tgb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Plumpfull" family="Plumpfull" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h71-QJ-ecq">
+                                <rect key="frame" x="16" y="20" width="35" height="25"/>
+                                <state key="normal" image="arrowicon"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="brR-k1-G2m" firstAttribute="trailing" secondItem="LLs-Db-HlH" secondAttribute="trailing" constant="234" id="5bk-mc-Tdl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P9K-ha-438" secondAttribute="trailing" constant="-17" id="BsY-gG-asB"/>
+                            <constraint firstItem="z5J-cy-no9" firstAttribute="top" secondItem="brR-k1-G2m" secondAttribute="top" id="DWW-wK-E75"/>
+                            <constraint firstItem="Brp-4o-nhF" firstAttribute="top" secondItem="P9K-ha-438" secondAttribute="top" id="Ex1-4V-rOx"/>
+                            <constraint firstItem="aIG-Fl-HGa" firstAttribute="leading" secondItem="z5J-cy-no9" secondAttribute="trailing" constant="16" id="FIe-k5-GkW"/>
+                            <constraint firstItem="P9K-ha-438" firstAttribute="centerX" secondItem="z5J-cy-no9" secondAttribute="centerX" id="MeC-R0-c0B"/>
+                            <constraint firstItem="Brp-4o-nhF" firstAttribute="leading" secondItem="P9K-ha-438" secondAttribute="leading" id="OTF-ZT-RHZ"/>
+                            <constraint firstItem="z5J-cy-no9" firstAttribute="top" secondItem="h71-QJ-ecq" secondAttribute="top" id="R8Z-OO-ACd"/>
+                            <constraint firstItem="LLs-Db-HlH" firstAttribute="leading" secondItem="brR-k1-G2m" secondAttribute="leading" constant="31" id="REi-G8-S0h"/>
+                            <constraint firstItem="Brp-4o-nhF" firstAttribute="centerX" secondItem="z5J-cy-no9" secondAttribute="centerX" id="XOv-hG-ef4"/>
+                            <constraint firstItem="P9K-ha-438" firstAttribute="leading" secondItem="brR-k1-G2m" secondAttribute="leading" constant="1" id="Xt1-5m-yIT"/>
+                            <constraint firstItem="z5J-cy-no9" firstAttribute="top" secondItem="aIG-Fl-HGa" secondAttribute="top" id="eZn-iG-P73"/>
+                            <constraint firstItem="P9K-ha-438" firstAttribute="top" secondItem="VfU-FM-AVB" secondAttribute="top" id="eoo-YY-tLh"/>
+                            <constraint firstItem="P9K-ha-438" firstAttribute="bottom" secondItem="brR-k1-G2m" secondAttribute="bottom" id="hrc-MQ-cvu"/>
+                            <constraint firstItem="brR-k1-G2m" firstAttribute="bottom" secondItem="LLs-Db-HlH" secondAttribute="bottom" constant="32" id="ir1-Ag-J0m"/>
+                            <constraint firstItem="Brp-4o-nhF" firstAttribute="bottom" secondItem="P9K-ha-438" secondAttribute="bottom" id="pob-oB-rAk"/>
+                            <constraint firstItem="z5J-cy-no9" firstAttribute="leading" secondItem="h71-QJ-ecq" secondAttribute="trailing" constant="17" id="vqH-ay-eom"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="brR-k1-G2m"/>
+                    </view>
+                    <connections>
+                        <outlet property="myTest" destination="z5J-cy-no9" id="s3t-6a-Ffl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fL7-8l-L79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3713" y="600"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowicon" width="74" height="51"/>
@@ -967,6 +1043,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XYP-Bf-uJt"/>
-        <segue reference="BS9-u5-6bV"/>
+        <segue reference="5gb-ie-3Hy"/>
     </inferredMetricsTieBreakers>
 </document>
