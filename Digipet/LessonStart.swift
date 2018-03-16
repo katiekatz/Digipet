@@ -26,17 +26,17 @@ class LessonStart : UIViewController {
         //ask emma for colors
         switch level {
         case "1":
-            view.backgroundColor = UIColor(red: 108/255.0, green: 1, blue: 111/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 159/255.0, green: 1, blue: 159/255.0, alpha: 1)
         case "2":
-            view.backgroundColor = UIColor(red: 1, green: 0, blue: 1, alpha: 1)
+            view.backgroundColor = UIColor(red: 252/255.0, green: 138/255.0, blue: 1, alpha: 1)
         case "3":
-            view.backgroundColor = UIColor(red: 251/255.0, green: 174/255.0, blue: 23/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 249/255.0, green: 189/255.0, blue: 83/255.0, alpha: 1)
         case "4":
-            view.backgroundColor = UIColor(red: 237/255.0, green: 30/255.0, blue: 121/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 234/255.0, green: 108/255.0, blue: 169/255.0, alpha: 1)
         case "5":
-            view.backgroundColor = UIColor(red: 6/255.0, green: 232/255.0, blue: 1, alpha: 1)
+            view.backgroundColor = UIColor(red: 148/255.0, green: 250/255.0, blue: 1, alpha: 1)
         case "6":
-            view.backgroundColor = UIColor(red: 252/255.0, green: 238/255.0, blue: 34/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 247/255.0, green: 229/255.0, blue: 99/255.0, alpha: 1)
         default:
             view.backgroundColor = .white
         }
