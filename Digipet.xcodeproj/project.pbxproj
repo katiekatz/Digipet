@@ -45,6 +45,7 @@
 		7E090C461FBF21D6001B0D1C /* L1LessonOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */; };
 		7E6F7099201B6308002C9389 /* L1LessonTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E6F7098201B6308002C9389 /* L1LessonTwo.sks */; };
 		7E6F709B201B631A002C9389 /* L1LessonTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F709A201B631A002C9389 /* L1LessonTwo.swift */; };
+		7E922A8D205801D0004910BF /* NewL1LessonOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E922A8C205801D0004910BF /* NewL1LessonOne.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = L1LessonOne.sks; sourceTree = "<group>"; };
 		7E6F7098201B6308002C9389 /* L1LessonTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = L1LessonTwo.sks; sourceTree = "<group>"; };
 		7E6F709A201B631A002C9389 /* L1LessonTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1LessonTwo.swift; sourceTree = "<group>"; };
+		7E922A8C205801D0004910BF /* NewL1LessonOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewL1LessonOne.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				6ADF10C820293A0500B34B6B /* VoiceRecognition.swift */,
 				02E805291F9F6926003D1C73 /* Scenes */,
 				022C69051F82650E0034833D /* AppDelegate.swift */,
+				7E922A8C205801D0004910BF /* NewL1LessonOne.swift */,
 				022C69091F82650E0034833D /* Actions.sks */,
 				022C690D1F82650E0034833D /* GameViewController.swift */,
 				6AC890452028B63500BEB0A5 /* MainScreen.swift */,
@@ -211,7 +214,6 @@
 				7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */,
 				7E6F7098201B6308002C9389 /* L1LessonTwo.sks */,
 				7E6F709A201B631A002C9389 /* L1LessonTwo.swift */,
-				02E8052A1F9F6996003D1C73 /* PlayPage.sks */,
 				02E8052C1F9F69D4003D1C73 /* LearnPage.sks */,
 				02395D8E2024A29C00602AE9 /* PlayPage.sks */,
 				0222C1DD1FB09B7600CA8D29 /* LearnPage.swift */,
@@ -392,6 +394,7 @@
 				02F3CE9F201B6B0A008A7FA6 /* LessonInfoBox.swift in Sources */,
 				02B4A8F1204A3402002E2EE7 /* LevelVC.swift in Sources */,
 				022C69061F82650E0034833D /* AppDelegate.swift in Sources */,
+				7E922A8D205801D0004910BF /* NewL1LessonOne.swift in Sources */,
 				028E89981FEBED7700D19441 /* LessonRow.swift in Sources */,
 				02E805281F9E18D4003D1C73 /* GameScene.swift in Sources */,
 			);

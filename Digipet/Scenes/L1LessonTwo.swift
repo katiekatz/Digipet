@@ -93,7 +93,7 @@ class L1LessonTwo: SKScene {
         array = [math1, math2, math3, ask1, ask2, bigNumber, goodbye1, reentrance, people1, people2, goodbye2]
         runLesson()
     }
-    
+
     func goToScene(scene: SKScene) {
         let sceneTransition = SKTransition.push(with: .left, duration: 0.5)
         scene.scaleMode = .aspectFill
