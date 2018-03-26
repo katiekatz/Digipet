@@ -8,6 +8,15 @@
 
 import UIKit
 
+extension UILabel {
+    var numberOfVisibleLines: Int {
+        let textSize = CGSize(width: CGFloat(self.frame.size.width), height: CGFloat(MAXFLOAT))
+        let rHeight: Int = lroundf(Float(self.sizeThatFits(textSize).height))
+        let charSize: Int = lroundf(Float(self.font.pointSize))
+        return (rHeight / charSize) + 1
+    }
+}
+
 class LessonStart : UIViewController {
     
     var level : String = "0"
@@ -23,7 +32,6 @@ class LessonStart : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ask emma for colors
         switch level {
         case "1":
             view.backgroundColor = UIColor(red: 159/255.0, green: 1, blue: 159/255.0, alpha: 1)
@@ -48,6 +56,12 @@ class LessonStart : UIViewController {
         petImg.image = UIImage(named: (lesson?.petImg)!)
         
         lessonName.text = lesson?.name.uppercased()
+        
+        if lessonName.numberOfVisibleLines > 1 {
+            lessonDesc.numberOfLines = 3
+        }
+        //YOU STILL NEED TO MOVE THE TEXT UP HERE!!!!!
+        
         lessonDesc.text = lesson?.startDesc
         
         talkButton.layer.borderColor = UIColor(red: 108/255.0, green: 1, blue: 111/255.0, alpha: 1).cgColor
@@ -63,6 +77,14 @@ class LessonStart : UIViewController {
         typeButton.layer.backgroundColor = UIColor(red: 249/255.0, green: 249/255.0, blue: 249/255.0, alpha: 1).cgColor
         
         
+    }
+    
+    @IBAction func typeButtonTouched(_ sender: Any) {
+        performSegue(withIdentifier: ((lesson?.fileDest)! + "Type"), sender: sender)
+    }
+    
+    @IBAction func talkButtonTouched(_ sender: Any) {
+        performSegue(withIdentifier: ((lesson?.fileDest)! + "Talk"), sender: sender)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -30,6 +30,9 @@ class Learn : UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("----------------")
+        print("preparing for segue")
+        print("----------------")
         if let vc = segue.destination as? LevelVC {
             switch sender as? UIButton {
             case level1?:

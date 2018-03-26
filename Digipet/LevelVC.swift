@@ -18,7 +18,7 @@ class LevelVC : UIViewController {
     var l5Lessons = [Lesson]()
     var l6Lessons = [Lesson]()
     
-    let lesson1 = Lesson(name: "Basics I", petImg: "china", fileDest: "ha", infoVH: "hello, goodbye, yes, no, maybe, okay, please, thank you, you're welcome, good morning...", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa ab abaw erfwarf awefaw svawraf aewjn", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson1 = Lesson(name: "Basics I", petImg: "china", fileDest: "toL1LessonOne", infoVH: "hello, goodbye, yes, no, maybe, okay, please, thank you, you're welcome, good morning...", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa ab abaw erfwarf awefaw svawraf aewjn", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
     let lesson2 = Lesson(name: "TeSt, how long is this", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
     let lesson3 = Lesson(name: "testing", petImg: "china", fileDest: "ha2", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
     let lesson4 = Lesson(name: "bwahaha", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
@@ -129,8 +129,10 @@ class LevelVC : UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        blur.isHidden = true
-        infoView.isHidden = true
+        UIView.animate(withDuration: 0.3){
+            self.blur.alpha = 0
+            self.infoView.alpha = 0
+        }
         showInfo = "nil"
     }
     
