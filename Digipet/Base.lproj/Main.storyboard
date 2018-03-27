@@ -35,7 +35,7 @@
         <!--Main Screen-->
         <scene sceneID="tET-cv-LKw">
             <objects>
-                <viewController id="sgx-Yj-ML6" customClass="MainScreen" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainScreen" id="sgx-Yj-ML6" customClass="MainScreen" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sOe-hF-uYz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrowicon"/>
                                 <connections>
-                                    <segue destination="sgx-Yj-ML6" kind="show" id="ncL-E0-QuI"/>
+                                    <action selector="backButtonTouched:" destination="3eF-DO-C7J" eventType="touchUpInside" id="FuU-18-aj5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iky-f4-1h5">
@@ -210,7 +210,7 @@
                                     <color key="titleColor" red="0.42352941179999998" green="1" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mFk-7B-P2V" kind="show" id="7SJ-4W-tIA"/>
+                                    <action selector="levelOneTouched:" destination="3eF-DO-C7J" eventType="touchUpInside" id="mzr-xP-KoS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUU-8O-SDe">
@@ -224,7 +224,7 @@
                                     <color key="titleColor" red="0.9980736375" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mFk-7B-P2V" kind="show" id="mUc-Y1-WXu"/>
+                                    <action selector="levelTwoTouched:" destination="3eF-DO-C7J" eventType="touchUpInside" id="6GV-5K-Fk3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mA-hg-YmO">
@@ -238,7 +238,7 @@
                                     <color key="titleColor" red="0.98327165839999997" green="0.68216878179999996" blue="0.089898489420000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mFk-7B-P2V" kind="show" id="86W-NC-xKT"/>
+                                    <action selector="levelThreeTouched:" destination="3eF-DO-C7J" eventType="touchUpInside" id="LPC-n2-B1N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAr-QT-HdI">
@@ -252,7 +252,7 @@
                                     <color key="titleColor" red="0.92774504420000004" green="0.1171706691" blue="0.47578930850000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mFk-7B-P2V" kind="show" id="5pa-Yd-men"/>
+                                    <action selector="levelFourTouched:" destination="3eF-DO-C7J" eventType="touchUpInside" id="0KU-U6-bz6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp5-LY-Jph">
@@ -266,7 +266,7 @@
                                     <color key="titleColor" red="0.022412680090000001" green="0.90980714559999998" blue="0.9993131757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mFk-7B-P2V" kind="show" id="wno-VQ-36l"/>
+                                    <action selector="levelFiveTouched:" destination="3eF-DO-C7J" eventType="touchUpInside" id="meC-VN-URL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnL-Tc-OUl">
@@ -280,7 +280,7 @@
                                     <color key="titleColor" red="0.98680108789999998" green="0.93241268399999999" blue="0.13197958470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mFk-7B-P2V" kind="show" id="OZh-l3-ap0"/>
+                                    <action selector="levelSixTouched:" destination="3eF-DO-C7J" eventType="touchUpInside" id="4Wn-eu-mrd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -397,7 +397,7 @@
                                 <fontDescription key="fontDescription" name="Plumpfull" family="Plumpfull" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnh-ox-eTh">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="NewL1LessonOneTypeBack" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnh-ox-eTh">
                                 <rect key="frame" x="15" y="40" width="35" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="dLE-HI-7AC"/>
@@ -405,7 +405,7 @@
                                 </constraints>
                                 <state key="normal" image="arrowicon"/>
                                 <connections>
-                                    <segue destination="bP0-oN-pva" kind="show" id="9YT-On-rF6"/>
+                                    <action selector="backButtonTouched:" destination="PHM-JX-2mO" eventType="touchUpInside" id="dNt-rD-dJA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -528,7 +528,7 @@
         <!--LevelVC-->
         <scene sceneID="fWY-io-2DH">
             <objects>
-                <viewController id="mFk-7B-P2V" customClass="LevelVC" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="levelVC" id="mFk-7B-P2V" customClass="LevelVC" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Id-5w-ynd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -551,7 +551,7 @@
                                 </constraints>
                                 <state key="normal" image="arrowicon"/>
                                 <connections>
-                                    <segue destination="3eF-DO-C7J" kind="show" id="BS9-u5-6bV"/>
+                                    <action selector="backButtonTouched:" destination="mFk-7B-P2V" eventType="touchUpInside" id="xly-bQ-Fqy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMy-sp-bCe">
@@ -675,7 +675,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="backButtonTapped:" destination="mFk-7B-P2V" eventType="touchUpInside" id="EA1-6a-BxQ"/>
+                                                        <action selector="infoBackButtonTouched:" destination="mFk-7B-P2V" eventType="touchUpInside" id="SAK-UU-2ct"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -747,7 +747,6 @@
                         <outlet property="infoVH" destination="Dud-Nj-R8h" id="pTt-Xr-49l"/>
                         <outlet property="infoView" destination="rZC-Qt-FTC" id="qZW-Ty-0uQ"/>
                         <outlet property="lessonNumber" destination="OQh-fM-RAh" id="IiZ-qJ-16s"/>
-                        <segue destination="bP0-oN-pva" kind="show" identifier="LevelToLessonStart" id="fVb-oR-QB4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9g-IV-q59" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -757,7 +756,7 @@
         <!--Lesson Start-->
         <scene sceneID="i3p-7i-gdZ">
             <objects>
-                <viewController storyboardIdentifier="LessonStart" id="bP0-oN-pva" customClass="LessonStart" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lessonStart" id="bP0-oN-pva" customClass="LessonStart" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O3c-12-xg7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -770,7 +769,7 @@
                                 </constraints>
                                 <state key="normal" image="arrowicon"/>
                                 <connections>
-                                    <segue destination="mFk-7B-P2V" kind="show" id="XYP-Bf-uJt"/>
+                                    <action selector="backButtonTouched:" destination="bP0-oN-pva" eventType="touchUpInside" id="vAH-oW-PcF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEp-cx-w9q">
@@ -880,8 +879,6 @@
                         <outlet property="startBox" destination="Tkm-ZH-nhQ" id="30d-n0-hnD"/>
                         <outlet property="talkButton" destination="dAa-zM-koe" id="IWk-zj-BaJ"/>
                         <outlet property="typeButton" destination="a32-7w-oEr" id="brI-dJ-tKm"/>
-                        <segue destination="PHM-JX-2mO" kind="show" identifier="toL1LessonOneType" id="pfj-Gy-K5v"/>
-                        <segue destination="MSs-pT-u5w" kind="show" identifier="toL1LessonOneTalk" id="f46-uX-Tie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bQ-pP-V50" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -961,12 +958,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCT-KP-ucX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2877.5999999999999" y="637.78110944527737"/>
+            <point key="canvasLocation" x="2086" y="619"/>
         </scene>
         <!--NewL1 Lesson One-->
         <scene sceneID="jWK-48-vIC">
             <objects>
-                <viewController id="MSs-pT-u5w" customClass="NewL1LessonOne" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewL1LessonOneTalk" id="MSs-pT-u5w" customClass="NewL1LessonOne" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VfU-FM-AVB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1005,7 +1002,7 @@
                                 <fontDescription key="fontDescription" name="Plumpfull" family="Plumpfull" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h71-QJ-ecq">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="NewL1LessonOneTalkBack" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h71-QJ-ecq">
                                 <rect key="frame" x="15" y="40" width="35" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="swg-z1-W9w"/>
@@ -1013,7 +1010,7 @@
                                 </constraints>
                                 <state key="normal" image="arrowicon"/>
                                 <connections>
-                                    <segue destination="bP0-oN-pva" kind="show" id="vUr-jb-CEd"/>
+                                    <action selector="backButtonTouched:" destination="MSs-pT-u5w" eventType="touchUpInside" id="D9e-GQ-IZx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1064,7 +1061,6 @@
         <image name="wallday" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9YT-On-rF6"/>
-        <segue reference="7SJ-4W-tIA"/>
+        <segue reference="Wc2-uA-h4v"/>
     </inferredMetricsTieBreakers>
 </document>

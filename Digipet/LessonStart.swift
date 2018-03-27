@@ -79,18 +79,23 @@ class LessonStart : UIViewController {
         
     }
     
+    @IBAction func backButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func typeButtonTouched(_ sender: Any) {
-        performSegue(withIdentifier: ((lesson?.fileDest)! + "Type"), sender: sender)
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: (lesson?.fileDest)! + "Type")
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
     }
     
     @IBAction func talkButtonTouched(_ sender: Any) {
-        performSegue(withIdentifier: ((lesson?.fileDest)! + "Talk"), sender: sender)
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: (lesson?.fileDest)! + "Talk")
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? LevelVC {
-            vc.text = level
-        }
-    }
+
     
 }

@@ -30,7 +30,6 @@
 		0270E888205063250053C4CE /* LessonStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270E887205063250053C4CE /* LessonStart.swift */; };
 		0272AD991FAB49A700706CDE /* Plumpfull.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0272AD981FAB49A700706CDE /* Plumpfull.ttf */; };
 		0273EB5C204F3A4B00C94154 /* LessonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273EB5B204F3A4B00C94154 /* LessonTableViewController.swift */; };
-		027552D82065284E00FDEA4F /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027552D72065284E00FDEA4F /* Segues.swift */; };
 		02867B4D2004F9870004B635 /* LessonStartBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02867B4C2004F9870004B635 /* LessonStartBox.swift */; };
 		028E89981FEBED7700D19441 /* LessonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028E89971FEBED7700D19441 /* LessonRow.swift */; };
 		02A38A1E20691E9400EAD028 /* RZTransitionsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A389EE20691E9400EAD028 /* RZTransitionsNavigationController.m */; };
@@ -115,7 +114,6 @@
 		0270E887205063250053C4CE /* LessonStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonStart.swift; sourceTree = "<group>"; };
 		0272AD981FAB49A700706CDE /* Plumpfull.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Plumpfull.ttf; sourceTree = "<group>"; };
 		0273EB5B204F3A4B00C94154 /* LessonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewController.swift; sourceTree = "<group>"; };
-		027552D72065284E00FDEA4F /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		02867B4C2004F9870004B635 /* LessonStartBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonStartBox.swift; sourceTree = "<group>"; };
 		028E89971FEBED7700D19441 /* LessonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRow.swift; sourceTree = "<group>"; };
 		02A389ED20691E9400EAD028 /* RZTransitionsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsNavigationController.h; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				022C690D1F82650E0034833D /* GameViewController.swift */,
 				6AC890452028B63500BEB0A5 /* MainScreen.swift */,
 				02B4A8F0204A3402002E2EE7 /* LevelVC.swift */,
-				027552D72065284E00FDEA4F /* Segues.swift */,
 				02A399ED204EC63500C386CC /* LessonTableViewCell.swift */,
 				022C690F1F82650E0034833D /* Main.storyboard */,
 				0270E887205063250053C4CE /* LessonStart.swift */,
@@ -580,7 +577,6 @@
 				02A38A2020691E9400EAD028 /* RZBaseSwipeInteractionController.m in Sources */,
 				02F3CE9F201B6B0A008A7FA6 /* LessonInfoBox.swift in Sources */,
 				02B4A8F1204A3402002E2EE7 /* LevelVC.swift in Sources */,
-				027552D82065284E00FDEA4F /* Segues.swift in Sources */,
 				022C69061F82650E0034833D /* AppDelegate.swift in Sources */,
 				7E922A8D205801D0004910BF /* NewL1LessonOne.swift in Sources */,
 				028E89981FEBED7700D19441 /* LessonRow.swift in Sources */,
