@@ -131,12 +131,16 @@ class LevelVC : UIViewController {
         self.blur.alpha = 0
         self.infoView.alpha = 0
         showInfo = "nil"
+    RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZCirclePushAnimationController()
+        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCirclePushAnimationController()
         self.transitioningDelegate = RZTransitionsManager.shared()
         let nextViewController = storyboard?.instantiateViewController(withIdentifier: "lessonStart")
         (nextViewController as! LessonStart).level = text
         (nextViewController as! LessonStart).lesson = lessonFocus
         nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
         self.present(nextViewController!, animated:true) {}
+        RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZCardSlideAnimationController()
+        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
     }
     
     @IBAction func infoBackButtonTouched(_ sender: Any) {
