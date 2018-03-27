@@ -963,7 +963,7 @@
         <!--NewL1 Lesson One Talk-->
         <scene sceneID="jWK-48-vIC">
             <objects>
-                <viewController id="MSs-pT-u5w" customClass="NewL1LessonOneTalk" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewL1LessonOneTalk" id="MSs-pT-u5w" customClass="NewL1LessonOneTalk" customModule="Digipet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VfU-FM-AVB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -994,7 +994,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z5J-cy-no9">
-                                <rect key="frame" x="68" y="20" width="240" height="39"/>
+                                <rect key="frame" x="68" y="40" width="240" height="39"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="6gs-Hs-LyG"/>
@@ -1014,15 +1014,6 @@
                                     <action selector="backButtonTouched:" destination="MSs-pT-u5w" eventType="touchUpInside" id="D9e-GQ-IZx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIC-9m-6qj">
-                                <rect key="frame" x="1" y="67" width="375" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="921-rB-0gX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1039,26 +1030,22 @@
                             <constraint firstItem="LLs-Db-HlH" firstAttribute="leading" secondItem="brR-k1-G2m" secondAttribute="leading" constant="31" id="REi-G8-S0h"/>
                             <constraint firstItem="Brp-4o-nhF" firstAttribute="centerX" secondItem="z5J-cy-no9" secondAttribute="centerX" id="XOv-hG-ef4"/>
                             <constraint firstItem="P9K-ha-438" firstAttribute="leading" secondItem="brR-k1-G2m" secondAttribute="leading" constant="1" id="Xt1-5m-yIT"/>
-                            <constraint firstItem="IIC-9m-6qj" firstAttribute="trailing" secondItem="Brp-4o-nhF" secondAttribute="trailing" id="aKT-Ms-FCr"/>
                             <constraint firstItem="z5J-cy-no9" firstAttribute="top" secondItem="aIG-Fl-HGa" secondAttribute="top" id="eZn-iG-P73"/>
                             <constraint firstItem="P9K-ha-438" firstAttribute="top" secondItem="VfU-FM-AVB" secondAttribute="top" id="eoo-YY-tLh"/>
-                            <constraint firstItem="IIC-9m-6qj" firstAttribute="leading" secondItem="P9K-ha-438" secondAttribute="leading" id="gsE-hu-4WI"/>
                             <constraint firstItem="P9K-ha-438" firstAttribute="bottom" secondItem="brR-k1-G2m" secondAttribute="bottom" id="hrc-MQ-cvu"/>
                             <constraint firstItem="brR-k1-G2m" firstAttribute="bottom" secondItem="LLs-Db-HlH" secondAttribute="bottom" constant="32" id="ir1-Ag-J0m"/>
-                            <constraint firstItem="IIC-9m-6qj" firstAttribute="top" secondItem="z5J-cy-no9" secondAttribute="bottom" constant="8" symbolic="YES" id="lxX-AL-ARu"/>
                             <constraint firstItem="Brp-4o-nhF" firstAttribute="bottom" secondItem="P9K-ha-438" secondAttribute="bottom" id="pob-oB-rAk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="brR-k1-G2m"/>
                     </view>
                     <connections>
-                        <outlet property="detectedTextLabel" destination="IIC-9m-6qj" id="t7z-6v-gTU"/>
                         <outlet property="myTest" destination="z5J-cy-no9" id="s3t-6a-Ffl"/>
                         <outlet property="startButton" destination="LLs-Db-HlH" id="PiM-SI-ZRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fL7-8l-L79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3712.8000000000002" y="715.59220389805103"/>
+            <point key="canvasLocation" x="3980" y="340"/>
         </scene>
     </scenes>
     <resources>
