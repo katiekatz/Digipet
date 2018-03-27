@@ -18,7 +18,7 @@ class LevelVC : UIViewController {
     var l5Lessons = [Lesson]()
     var l6Lessons = [Lesson]()
     
-    let lesson1 = Lesson(name: "Basics I", petImg: "china", fileDest: "ha", infoVH: "hello, goodbye, yes, no, maybe, okay, please, thank you, you're welcome, good morning...", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa ab abaw erfwarf awefaw svawraf aewjn", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
+    let lesson1 = Lesson(name: "Basics I", petImg: "china", fileDest: "NewL1LessonOne", infoVH: "hello, goodbye, yes, no, maybe, okay, please, thank you, you're welcome, good morning...", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa ab abaw erfwarf awefaw svawraf aewjn", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
     let lesson2 = Lesson(name: "TeSt, how long is this", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
     let lesson3 = Lesson(name: "testing", petImg: "china", fileDest: "ha2", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
     let lesson4 = Lesson(name: "bwahaha", petImg: "china", fileDest: "ha", infoVH: "vocab vocab vocab najadea aeijfubaw dwfaef", infoGD: "game desc dnwse fjswie nvweih dhfwseh jd j jwieuuwa", startDesc: "think and thonk and thunk and think and thonk and thunk and think and thonk and thunk and uwu and hello and is this thing on")!
@@ -122,23 +122,30 @@ class LevelVC : UIViewController {
         }
         
     }
+
+    @IBAction func backButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func startButtonTapped(_ sender: Any) {
+        self.blur.alpha = 0
+        self.infoView.alpha = 0
         showInfo = "nil"
-        performSegue(withIdentifier: "LevelToLessonStart", sender: nil)
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "lessonStart")
+        (nextViewController as! LessonStart).level = text
+        (nextViewController as! LessonStart).lesson = lessonFocus
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
-        blur.isHidden = true
-        infoView.isHidden = true
-        showInfo = "nil"
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? LessonStart {
-            vc.lesson = lessonFocus
-            vc.level = text
+    @IBAction func infoBackButtonTouched(_ sender: Any) {
+        UIView.animate(withDuration: 0.3){
+            self.blur.alpha = 0
+            self.infoView.alpha = 0
         }
+        showInfo = "nil"
+        self.dismiss(animated: true, completion: nil)
     }
     
     override var shouldAutorotate: Bool {

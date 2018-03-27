@@ -29,25 +29,56 @@ class Learn : UIViewController {
         self.searchBar.endEditing(true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? LevelVC {
-            switch sender as? UIButton {
-            case level1?:
-                vc.text = "1"
-            case level2?:
-                vc.text = "2"
-            case level3?:
-                vc.text = "3"
-            case level4?:
-                vc.text = "4"
-            case level5?:
-                vc.text = "5"
-            case level6?:
-                vc.text = "6"
-            default:
-                vc.text = "error"
-            }
-        }
+    @IBAction func backButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func levelOneTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "levelVC")
+        (nextViewController as! LevelVC).text = "1"
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
+    }
+    
+    @IBAction func levelTwoTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "levelVC")
+        (nextViewController as! LevelVC).text = "2"
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
+    }
+    
+    @IBAction func levelThreeTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "levelVC")
+        (nextViewController as! LevelVC).text = "3"
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
+    }
+    
+    @IBAction func levelFourTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "levelVC")
+        (nextViewController as! LevelVC).text = "4"
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
+    }
+    
+    @IBAction func levelFiveTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "levelVC")
+        (nextViewController as! LevelVC).text = "5"
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
+    }
+    
+    @IBAction func levelSixTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "levelVC")
+        (nextViewController as! LevelVC).text = "6"
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
     }
     
     override var shouldAutorotate: Bool {

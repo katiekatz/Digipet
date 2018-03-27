@@ -25,14 +25,13 @@ class NewL1LessonOne : UIViewController {
         //self.searchBar.endEditing(true)
     }
     
+    @IBAction func backButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func printMessage() {
         var myString: String = myTest.text
         print(myString)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
     }
     
     override var shouldAutorotate: Bool {

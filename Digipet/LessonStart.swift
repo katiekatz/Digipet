@@ -8,6 +8,15 @@
 
 import UIKit
 
+extension UILabel {
+    var numberOfVisibleLines: Int {
+        let textSize = CGSize(width: CGFloat(self.frame.size.width), height: CGFloat(MAXFLOAT))
+        let rHeight: Int = lroundf(Float(self.sizeThatFits(textSize).height))
+        let charSize: Int = lroundf(Float(self.font.pointSize))
+        return (rHeight / charSize) + 1
+    }
+}
+
 class LessonStart : UIViewController {
     
     var level : String = "0"
@@ -23,20 +32,19 @@ class LessonStart : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ask emma for colors
         switch level {
         case "1":
-            view.backgroundColor = UIColor(red: 108/255.0, green: 1, blue: 111/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 159/255.0, green: 1, blue: 159/255.0, alpha: 1)
         case "2":
-            view.backgroundColor = UIColor(red: 1, green: 0, blue: 1, alpha: 1)
+            view.backgroundColor = UIColor(red: 252/255.0, green: 138/255.0, blue: 1, alpha: 1)
         case "3":
-            view.backgroundColor = UIColor(red: 251/255.0, green: 174/255.0, blue: 23/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 249/255.0, green: 189/255.0, blue: 83/255.0, alpha: 1)
         case "4":
-            view.backgroundColor = UIColor(red: 237/255.0, green: 30/255.0, blue: 121/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 234/255.0, green: 108/255.0, blue: 169/255.0, alpha: 1)
         case "5":
-            view.backgroundColor = UIColor(red: 6/255.0, green: 232/255.0, blue: 1, alpha: 1)
+            view.backgroundColor = UIColor(red: 148/255.0, green: 250/255.0, blue: 1, alpha: 1)
         case "6":
-            view.backgroundColor = UIColor(red: 252/255.0, green: 238/255.0, blue: 34/255.0, alpha: 1)
+            view.backgroundColor = UIColor(red: 247/255.0, green: 229/255.0, blue: 99/255.0, alpha: 1)
         default:
             view.backgroundColor = .white
         }
@@ -48,6 +56,12 @@ class LessonStart : UIViewController {
         petImg.image = UIImage(named: (lesson?.petImg)!)
         
         lessonName.text = lesson?.name.uppercased()
+        
+        if lessonName.numberOfVisibleLines > 1 {
+            lessonDesc.numberOfLines = 3
+        }
+        //YOU STILL NEED TO MOVE THE TEXT UP HERE!!!!!
+        
         lessonDesc.text = lesson?.startDesc
         
         talkButton.layer.borderColor = UIColor(red: 108/255.0, green: 1, blue: 111/255.0, alpha: 1).cgColor
@@ -65,10 +79,23 @@ class LessonStart : UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? LevelVC {
-            vc.text = level
-        }
+    @IBAction func backButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func typeButtonTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: (lesson?.fileDest)! + "Type")
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
+    }
+    
+    @IBAction func talkButtonTouched(_ sender: Any) {
+        self.transitioningDelegate = RZTransitionsManager.shared()
+        let nextViewController = storyboard?.instantiateViewController(withIdentifier: (lesson?.fileDest)! + "Talk")
+        nextViewController?.transitioningDelegate = RZTransitionsManager.shared()
+        self.present(nextViewController!, animated:true) {}
+    }
+
     
 }
