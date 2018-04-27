@@ -30,7 +30,7 @@
                 <tapGestureRecognizer id="vpP-R5-f1r"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-428" y="-512"/>
+            <point key="canvasLocation" x="-430" y="-81"/>
         </scene>
         <!--Main Screen-->
         <scene sceneID="tET-cv-LKw">
@@ -353,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfE-qo-4tg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1170.4000000000001" y="540.17991004497753"/>
+            <point key="canvasLocation" x="-431" y="671"/>
         </scene>
         <!--NewL1 Lesson One-->
         <scene sceneID="VkC-sT-IY2">
@@ -435,7 +435,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgx-zd-u2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3929" y="-532"/>
+            <point key="canvasLocation" x="3657" y="-385"/>
         </scene>
         <!--Voice Recognition-->
         <scene sceneID="pIq-2f-Key">
@@ -530,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dY-JN-pln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="690"/>
+            <point key="canvasLocation" x="489" y="671"/>
         </scene>
         <!--Match Game-->
         <scene sceneID="V5T-eU-LWW">
@@ -1066,7 +1066,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bQ-pP-V50" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2814" y="-9"/>
+            <point key="canvasLocation" x="2858" y="-81"/>
         </scene>
         <!--Lesson Table View Controller-->
         <scene sceneID="Ou6-77-1Ir">
