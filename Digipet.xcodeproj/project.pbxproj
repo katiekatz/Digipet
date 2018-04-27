@@ -61,6 +61,7 @@
 		6A75EE6A205BF38F00DEE877 /* NewL1LessonOneTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A75EE69205BF38F00DEE877 /* NewL1LessonOneTalk.swift */; };
 		6AC890462028B63500BEB0A5 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC890452028B63500BEB0A5 /* MainScreen.swift */; };
 		6ADF10C920293A0500B34B6B /* VoiceRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF10C820293A0500B34B6B /* VoiceRecognition.swift */; };
+		6AE5DFFC206C737500850DEB /* MatchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE5DFFB206C737500850DEB /* MatchGame.swift */; };
 		7E090C441FBF21CA001B0D1C /* L1LessonOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */; };
 		7E090C461FBF21D6001B0D1C /* L1LessonOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */; };
 		7E6F7099201B6308002C9389 /* L1LessonTwo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7E6F7098201B6308002C9389 /* L1LessonTwo.sks */; };
@@ -172,6 +173,7 @@
 		6A75EE69205BF38F00DEE877 /* NewL1LessonOneTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewL1LessonOneTalk.swift; sourceTree = "<group>"; };
 		6AC890452028B63500BEB0A5 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		6ADF10C820293A0500B34B6B /* VoiceRecognition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceRecognition.swift; sourceTree = "<group>"; };
+		6AE5DFFB206C737500850DEB /* MatchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGame.swift; sourceTree = "<group>"; };
 		7E090C431FBF21CA001B0D1C /* L1LessonOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1LessonOne.swift; sourceTree = "<group>"; };
 		7E090C451FBF21D6001B0D1C /* L1LessonOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = L1LessonOne.sks; sourceTree = "<group>"; };
 		7E6F7098201B6308002C9389 /* L1LessonTwo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = L1LessonTwo.sks; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				02B4A8F0204A3402002E2EE7 /* LevelVC.swift */,
 				02A399ED204EC63500C386CC /* LessonTableViewCell.swift */,
 				022C690F1F82650E0034833D /* Main.storyboard */,
+				6AE5DFFB206C737500850DEB /* MatchGame.swift */,
 				6A75EE69205BF38F00DEE877 /* NewL1LessonOneTalk.swift */,
 				0270E887205063250053C4CE /* LessonStart.swift */,
 				02359C8F2048376D00DA5BA4 /* Learn.swift */,
@@ -548,6 +551,7 @@
 				0273EB5C204F3A4B00C94154 /* LessonTableViewController.swift in Sources */,
 				02867B4D2004F9870004B635 /* LessonStartBox.swift in Sources */,
 				022804F01FBF19950087F8B3 /* LevelOne.swift in Sources */,
+				6AE5DFFC206C737500850DEB /* MatchGame.swift in Sources */,
 				02A38A2E20691E9400EAD028 /* NSObject+RZTransitionsViewHelpers.m in Sources */,
 				02A38A2120691E9400EAD028 /* RZHorizontalInteractionController.m in Sources */,
 				0209CA4E1FD5880300DDC91A /* SwiftySKScrollView.swift in Sources */,
