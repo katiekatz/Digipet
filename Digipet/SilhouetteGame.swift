@@ -178,7 +178,7 @@ class SilhouetteGame : UIViewController, SFSpeechRecognizerDelegate {
         answerText.layer.opacity = 1
         nextButton.imageView?.image = UIImage(named: "nextButton")
 
-        explainText.text = "That is \"" + (guess?.ch[0])! + "\""
+        explainText.text = "That is \"" + (guess?.sp[0])! + "\""
         imageView.image = guess?.image
 
         
