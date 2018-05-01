@@ -749,8 +749,9 @@
                                     <action selector="button13:" destination="Qrh-3o-kEe" eventType="touchUpInside" id="hes-R2-g7h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULv-D3-eSq">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULv-D3-eSq">
                                 <rect key="frame" x="104" y="470" width="80" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backofcard"/>
                                 <connections>
                                     <action selector="button14:" destination="Qrh-3o-kEe" eventType="touchUpInside" id="tZQ-sW-p5J"/>
@@ -810,7 +811,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Mq5-ld-xbR" firstAttribute="leading" secondItem="8fz-kL-AfX" secondAttribute="leading" constant="15" id="3ai-2p-xsd"/>
-                            <constraint firstItem="YPJ-Bi-0eT" firstAttribute="top" secondItem="ULv-D3-eSq" secondAttribute="bottom" constant="11" id="GIh-kP-MZq"/>
                             <constraint firstItem="YPJ-Bi-0eT" firstAttribute="centerX" secondItem="ehg-Eg-G1T" secondAttribute="centerX" id="KpE-ti-XxK"/>
                             <constraint firstItem="8fz-kL-AfX" firstAttribute="bottom" secondItem="YPJ-Bi-0eT" secondAttribute="bottom" constant="16" id="T9E-w5-NxT"/>
                             <constraint firstItem="8fz-kL-AfX" firstAttribute="trailing" secondItem="Mq5-ld-xbR" secondAttribute="trailing" constant="325" id="WVn-kC-pdh"/>
@@ -846,7 +846,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adz-Sx-mcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="1429"/>
+            <point key="canvasLocation" x="489" y="1441"/>
         </scene>
         <!--LevelVC-->
         <scene sceneID="fWY-io-2DH">

@@ -134,7 +134,7 @@ class MatchGame: UIViewController, SFSpeechRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "es"))
+        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh"))
         
         //print(random)
         random = randomHalf + randomHalf
@@ -268,7 +268,7 @@ class MatchGame: UIViewController, SFSpeechRecognizerDelegate {
             recognitionTask?.cancel()
             isRecording = false
             
-            var check = transKey[random[matchNum]][2]
+            var check = transKey[random[matchNum]][0]
             var looper = false
             for phrase in check {
                 if phrase.contains(detectedText){

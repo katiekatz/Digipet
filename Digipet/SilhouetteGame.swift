@@ -184,7 +184,7 @@ class SilhouetteGame : UIViewController, SFSpeechRecognizerDelegate {
         
         
         var looper = false
-        for phrase in (guess?.sp)! {
+        for phrase in (guess?.ch)! {
             print("possible phrase: " + phrase)
             if phrase.contains(detectedText) {
                 looper = true
@@ -212,7 +212,7 @@ class SilhouetteGame : UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewDidLoad() {
         
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "es"))
+        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "zh_HANS"))
         
         textView.layer.borderColor = UIColor.black.cgColor
         textView.layer.borderWidth = 2
