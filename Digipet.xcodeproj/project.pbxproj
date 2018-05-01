@@ -30,6 +30,7 @@
 		0270E888205063250053C4CE /* LessonStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0270E887205063250053C4CE /* LessonStart.swift */; };
 		0272AD991FAB49A700706CDE /* Plumpfull.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0272AD981FAB49A700706CDE /* Plumpfull.ttf */; };
 		0273EB5C204F3A4B00C94154 /* LessonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0273EB5B204F3A4B00C94154 /* LessonTableViewController.swift */; };
+		02842A2E20969BC800A0B484 /* SilhouetteGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02842A2D20969BC700A0B484 /* SilhouetteGame.swift */; };
 		02867B4D2004F9870004B635 /* LessonStartBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02867B4C2004F9870004B635 /* LessonStartBox.swift */; };
 		028E89981FEBED7700D19441 /* LessonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028E89971FEBED7700D19441 /* LessonRow.swift */; };
 		02A38A1E20691E9400EAD028 /* RZTransitionsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A389EE20691E9400EAD028 /* RZTransitionsNavigationController.m */; };
@@ -116,6 +117,7 @@
 		0270E887205063250053C4CE /* LessonStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonStart.swift; sourceTree = "<group>"; };
 		0272AD981FAB49A700706CDE /* Plumpfull.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Plumpfull.ttf; sourceTree = "<group>"; };
 		0273EB5B204F3A4B00C94154 /* LessonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewController.swift; sourceTree = "<group>"; };
+		02842A2D20969BC700A0B484 /* SilhouetteGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilhouetteGame.swift; sourceTree = "<group>"; };
 		02867B4C2004F9870004B635 /* LessonStartBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonStartBox.swift; sourceTree = "<group>"; };
 		028E89971FEBED7700D19441 /* LessonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRow.swift; sourceTree = "<group>"; };
 		02A389ED20691E9400EAD028 /* RZTransitionsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsNavigationController.h; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				022C69091F82650E0034833D /* Actions.sks */,
 				022C690D1F82650E0034833D /* GameViewController.swift */,
 				6AC890452028B63500BEB0A5 /* MainScreen.swift */,
+				02842A2D20969BC700A0B484 /* SilhouetteGame.swift */,
 				02B4A8F0204A3402002E2EE7 /* LevelVC.swift */,
 				02A399ED204EC63500C386CC /* LessonTableViewCell.swift */,
 				022C690F1F82650E0034833D /* Main.storyboard */,
@@ -569,6 +572,7 @@
 				02A38A2220691E9400EAD028 /* RZOverscrollInteractionController.m in Sources */,
 				02A38A2320691E9400EAD028 /* RZPinchInteractionController.m in Sources */,
 				7E090C441FBF21CA001B0D1C /* L1LessonOne.swift in Sources */,
+				02842A2E20969BC800A0B484 /* SilhouetteGame.swift in Sources */,
 				02359C902048376D00DA5BA4 /* Learn.swift in Sources */,
 				02A38A2C20691E9400EAD028 /* RZZoomBlurAnimationController.m in Sources */,
 				02A38A2820691E9400EAD028 /* RZRectZoomAnimationController.m in Sources */,
@@ -757,11 +761,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5S7T9DZY68;
+				DEVELOPMENT_TEAM = 4QL3776T85;
 				INFOPLIST_FILE = Digipet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaitlynkatz.Digipet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaitlynkatz.Capstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Digipet/Digipet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -776,11 +780,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5S7T9DZY68;
+				DEVELOPMENT_TEAM = 4QL3776T85;
 				INFOPLIST_FILE = Digipet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaitlynkatz.Digipet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaitlynkatz.Capstone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Digipet/Digipet-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

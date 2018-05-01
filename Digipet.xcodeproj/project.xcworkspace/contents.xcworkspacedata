@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Digipet.xcodeproj">
+      location = "group:/Users/Katie/Documents/Digipet/Digipet/SilhouetteGame.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
