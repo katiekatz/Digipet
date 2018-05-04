@@ -1,49 +1,25 @@
 //
-//  NewL1LessonOneTalk.swift
+//  L1LessonOneTalkView.swift
 //  Digipet
 //
-//  Created by Timothy Obiso on 3/16/18.
+//  Created by Nicholas Kassoy on 5/2/18.
 //  Copyright © 2018 Katie Katz. All rights reserved.
 //
 
-import UIKit
 import Speech
+import UIKit
+import SpriteKit
+import GameplayKit
 
-class NewL1LessonOneTalk: UIViewController, SFSpeechRecognizerDelegate {
+class L1LessonOneTalkView : UIViewController, SFSpeechRecognizerDelegate {
+    
     let audioEngine = AVAudioEngine()
     var speechRecognizer = SFSpeechRecognizer()
     var request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
     var isRecording = false
     
-    @IBOutlet weak var detectedTextLabel: UILabel!
-    @IBOutlet weak var startButton: UIButton!
-    
-    /*@IBAction func frenchPress(_ sender: Any) {
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "fr_FR"))
-    }
-    @IBAction func spanishPress(_ sender: Any) {
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko_KR"))
-    }
-    @IBAction func mandarinPress(_ sender: Any) {
-        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier:   "zh_Hans"))
-    }*/
-    
-    @IBAction func startButtonTapped(_ sender: UIButton) {
-        if isRecording == true {
-            request.endAudio()
-            request = SFSpeechAudioBufferRecognitionRequest()
-            audioEngine.stop()
-            audioEngine.inputNode.removeTap(onBus: 0)
-            recognitionTask?.cancel()
-            isRecording = false
-            startButton.setTitle("Talk!", for: .normal)
-        } else {
-            self.recordAndRecognizeSpeech()
-            isRecording = true
-            startButton.setTitle("Stop!", for: .normal)
-        }
-    }
+    //var detectedText : String = ""
     
     func recordAndRecognizeSpeech() {
         guard let node = audioEngine.inputNode as Optional else { return }
@@ -70,10 +46,11 @@ class NewL1LessonOneTalk: UIViewController, SFSpeechRecognizerDelegate {
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
             if result != nil {
                 if let result = result {
-                    let best = result.bestTranscription.formattedString
+                    let best = result.bestTranscription.formattedString.lowercased()
                     print(best)
                     print("hewwo!")
-                    self.detectedTextLabel.text = best
+                    //self.detectedText = best
+                    self.textField.text = best
                 }
             } else if let error = error {
                 print(error)
@@ -86,25 +63,66 @@ class NewL1LessonOneTalk: UIViewController, SFSpeechRecognizerDelegate {
             OperationQueue.main.addOperation {
                 switch authStatus {
                 case .authorized:
-                    self.startButton.isEnabled = true
+                    self.talkButton.isEnabled = true
                 case .denied:
-                    self.startButton.isEnabled = false
-                    self.detectedTextLabel.text = "User denied access"
+                    self.talkButton.isEnabled = false
+                    print("Error!")
+                    print("User denied access")
                 case .restricted:
-                    self.startButton.isEnabled = false
-                    self.detectedTextLabel.text = "Speech recognition restricted"
+                    self.talkButton.isEnabled = false
+                    print("Error!")
+                    print("Speech recognition restricted")
                 case .notDetermined:
-                    self.startButton.isEnabled = false
-                    self.detectedTextLabel.text = "Speech recognition not yet authorized"
+                    self.talkButton.isEnabled = false
+                    print("Error!")
+                    print("Speech recognition not yet authorized")
                 }
             }
         }
     }
     
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var myView: SKView!
+    @IBOutlet weak var talkButton: UIButton!
+    
+    var myScene: L1LessonOne = L1LessonOne()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.requestSpeechAuthorization()
+        speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))
+        textField.isUserInteractionEnabled = false
+        //myView.presentScene(myScene)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //self.searchBar.endEditing(true)
+    }
+    
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if isRecording == true {
+            request.endAudio()
+            request = SFSpeechAudioBufferRecognitionRequest()
+            audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
+            recognitionTask?.cancel()
+            isRecording = false
+            (myView.scene as! L1LessonOne).checkAnswer(answer: textField.text!)
+        } else {
+            self.recordAndRecognizeSpeech()
+            isRecording = true
+        }
+    }
+    
+    func revealButton() {
+        talkButton.isHidden = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
@@ -125,5 +143,5 @@ class NewL1LessonOneTalk: UIViewController, SFSpeechRecognizerDelegate {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
 }
+

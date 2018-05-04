@@ -1,37 +1,46 @@
 //
-//  NewL1LessonOne.swift
+//  L1LessonTwoTypeView.swift
 //  Digipet
 //
-//  Created by Nicholas Kassoy on 3/13/18.
+//  Created by Nicholas Kassoy on 5/2/18.
 //  Copyright © 2018 Katie Katz. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import SpriteKit
+import GameplayKit
 
-class NewL1LessonOne : UIViewController {
+class L1LessonTwoTypeView : UIViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
+
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var talkButton: UIButton!
-    @IBOutlet weak var myTest: UITextView!
+    @IBOutlet weak var myView: SKView!
+    var myScene: L1LessonTwo = L1LessonTwo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //myView.presentScene(myScene)
+    }
+
+    
+    @IBAction func answerDone(_ sender: UITextField) {
+        (myView.scene as! L1LessonTwo).checkAnswer(answer: textField.text!)
+    }
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        textField.becomeFirstResponder()
+    }
+    
+    func revealButton() {
+        talkButton.isHidden = false
+    }
+
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //self.searchBar.endEditing(true)
-    }
-    
-    @IBAction func backButtonTouched(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func printMessage() {
-        var myString: String = myTest.text
-        print(myString)
     }
     
     override var shouldAutorotate: Bool {
