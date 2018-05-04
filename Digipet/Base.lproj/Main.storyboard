@@ -1503,17 +1503,17 @@
     <resources>
         <image name="arrowicon" width="74" height="51"/>
         <image name="backofcard" width="111" height="160"/>
-        <image name="basicskyline" width="789" height="150"/>
         <image name="china" width="1251" height="1728"/>
-        <image name="clouds" width="1138" height="801"/>
-        <image name="grassbackground" width="750" height="1334"/>
+        <image name="daybackground" width="750" height="1334"/>
         <image name="learnbutton" width="214" height="220"/>
         <image name="logo" width="586" height="456"/>
         <image name="menuicon" width="67" height="49"/>
         <image name="playbutton" width="215" height="220"/>
         <image name="settings" width="72" height="73"/>
         <image name="skipButton" width="157" height="160"/>
+        <image name="skybackground" width="750" height="1334"/>
         <image name="talk" width="214" height="219"/>
+        <image name="wallday" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wc2-uA-h4v"/>
